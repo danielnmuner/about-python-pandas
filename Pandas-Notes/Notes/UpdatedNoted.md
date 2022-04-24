@@ -5,6 +5,8 @@
   - [x] [Tipos de datos](#tipos-de-datos)
   - [x] [Dimensiones](#dimensiones)
   - [x] [Creando arrays](creando-arrays)
+  - [x] [Shape y Reshape](shape-y-reshape)
+  - [x] [Funciones principales de NumPy](funciones-principales-de-numPy) 
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
@@ -128,6 +130,34 @@ np.random.randint(n,m)
 np.random.randint(n,m,(rows,cols))
 ```
  
+ ### Shape y Reshape
+ 
+ Es muy importante saber manipular las formas de los datos. 
+
+```python
+#Shape
+arr = np.random.randint(1,10,(3,2))
+arr.shape
+
+#Output (rows,cols) shape indica incluso las dimensiones de un tensor.
+(3, 2) 
+
+# Reshape permite manipular la forma de los datos arr.reshape(rows,cols) a veces las API requieren formas especificas y por esto es muy util.
+arr.reshape(1,6) = np.reshape(arr,(1,6))
+array([[7, 2, 4, 3, 3, 4]])
+
+#Reshape + tipo de estructura segun lenguage, donde 'C'se refiere al lenguage. 
+np.reshape(arr,(1,6), 'C')
+
+# 'A' -> Segun mi sistema
+# 'F' -> Segun Fortran
+```
+
+### Funciones principales de NumPy
+
+
+
+
  
  
  
