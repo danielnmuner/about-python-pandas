@@ -4,6 +4,7 @@
   - [x] [Numpy Array](#numpy-array)
   - [x] [Tipos de datos](#tipos-de-datos)
   - [x] [Dimensiones](#dimensiones)
+  - [x] [Creando arrays](creando-arrays)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
@@ -79,7 +80,53 @@ arr = arr.astype(np.string_) #Output: array([b'0.0', b'1.0', b'2.0', b'4.0', b'5
 
  A traves del comando `.ndim` podremos saber en Numpy con que dimensiones estamos trabajando. El argumento `ndmin` dentro de array establece la cantidad de dimensiones minimas que debe tener nuestro array: `np.array([1,2,3], ndmin=3)` al momento de crearlo `#Output: [[[1,2,3]]]` asi no las tenga.  
  
- Una alternativa mas completa a `ndmin` es la funcion `np.expand_dims(np.array([1,2,3]), axis=0 )` en la cual ademas de expandir la dimension podemos indicar el Eje a expandir. Para eliminar, comprimir o reducir dimensiones donde no hay datos usamos `np.squeeze([[[1,2,3]]])` Output: `[1,2,3]`
+ Una alternativa mas completa a `ndmin` es la funcion `np.expand_dims(np.array([1,2,3]), axis=0 )` en la cual ademas de expandir la dimension podemos indicar el Eje a expandir. Para eliminar, comprimir o reducir dimensiones donde no hay datos usamos `np.squeeze([[[1,2,3]]])` Output: `[1,2,3]`.  
+ 
+ 
+ ### Creando arrays
+ - **Rangos**
+Podemos crear arrays en python con `range(start,stop,steps)` como se muestra a continuacion:
+```python
+range(0,10) # Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+#Igualmente lo podemos hacer con Numpy np.arange(start,stop,steps: 
+
+np.arange(0,10) # Output: array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+
+- Crear arrays de **Zeros** `np.zeros((rows,cols))` o `np.zeros(n)` y de **Ones** `np.ones((rows,cols))`
+
+- Rangos definidos con **Linspace**
+`np.linspace(start,stop,n)`
+Donde **start** y **stop** determina el rango digamos de 1 a 100 y **n** se refiere a la cantidad, por ejemplo 10 numeros del 1 al 100.
+
+- Generar una **Matriz identidad**
+
+```python
+np.eye(n)
+#Para n = 3
+
+#Output matriz identidad:
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+```
+
+- Generar **Numeros Alatorios**:
+```python
+#1. General un num aleatorio de 0 a 1
+np.random.rand()
+#2. General un array de n aletorios
+#np.random.rand(n) para n = 4
+np.random.rand(3)
+array([0.75949945, 0.73539686, 0.27406198])
+#3. General un matriz de n x m aletorios
+np.random.rand(rows,cols)
+#4. Generar un aleatorio para un rango definido.
+np.random.randint(n,m) 
+#5. Matriz aleatorio con valores enteros definidos n-m.
+np.random.randint(n,m,(rows,cols))
+```
  
  
  
