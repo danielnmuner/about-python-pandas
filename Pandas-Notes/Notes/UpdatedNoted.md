@@ -343,6 +343,7 @@ Output : `array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])`
 
 Realizar operaciones de **algebra lineal**✖️➕➖🟰
 ```python
+#Sumamos el array original con la copia del mismo
 arr + arr_cp 
 ```  
 Output : `array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])` 
@@ -351,12 +352,13 @@ Output : `array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])`
 #Usar matrices o tensores y operarlos
 matriz = arr.reshape(2,5)
 matriz_cp = matriz.copy()
+#Sumamos original con la copia de la matriz
 matriz + matriz_cp
 ```  
 Output : `array([[ 0,  2,  4,  6,  8],
        [10, 12, 14, 16, 18]])` 
 
-Si queremos calcular el producto punto solo debemos asegurarnos que los arrys tiene dimenciones iguales y que uno esta transpuesto:  
+Si queremos calcular el producto punto solo debemos asegurarnos que los arrays tiene dimenciones iguales y que uno esta transpuesto:  
  
 ```python
 #Transpuesta de matriz_cp
