@@ -376,7 +376,8 @@ np.matmul(matriz,matriz_cp.T)
 Output : `array([[ 30,  80],
        [ 80, 255]])` 
 
-A continuacion: Como calcular la proyeccion de un vector sobre otro, [Video](https://www.youtube.com/watch?v=cq6jLrNqZL8), tener en cuenta que producto matricial no es lo mismo que producto escalar o entre dos vectores. 
+A continuacion: **Como calcular la proyeccion de un vector sobre otro, [Video](https://www.youtube.com/watch?v=cq6jLrNqZL8)**, tener en cuenta que producto matricial no es lo mismo que producto escalar o entre dos vectores.  
+
 ![producto-escalar](https://user-images.githubusercontent.com/60556632/165134640-152ab8e1-1391-4d47-838d-a713f480af11.png)
 
  
