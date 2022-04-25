@@ -1,4 +1,4 @@
-## Transformacion de Datos con Numpy y Pandas
+## Transformacion de Datos con Numpy y Pandas - Carlos Alarcon
 ### NumPy
 
   - [x] [Numpy Array](#numpy-array)
@@ -8,6 +8,7 @@
   - [x] [Shape y Reshape](#shape-y-reshape)
   - [x] [Funciones principales de NumPy](#funciones-principales-de-numPy) 
   - [x] [Copy](#copy)
+  - [x] [Condiciones](#condiciones)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
@@ -269,6 +270,53 @@ array_a
 ```  
 Output : `array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])` 
 
- 
+### Condiciones
+
+A traves de los condicionales podemos filtrar cualquier estructura de Datos a continuacion crearemos una y realizaremos diferentes condicionales:
+
+
+```python
+import numpy as np
+#Creamos un array 'arr' de tipo int8
+arr = np.linspace(1,10,10,dtype='int8')
+arr
+```  
+Output : `array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=int8)`  
+
+```python
+#Entrega una lista booleana si condicionamos el array
+arr > 5
+```  
+Output : `array([False, False, False, False, False,  True,  True,  True,True,True])`  
+
+```python
+#Si colocamos el condicional dentro de [condicional] obtendremos los datos
+indices_cond = arr > 5
+arr[indices_cond]
+```  
+Output : `array([ 6,  7,  8,  9, 10], dtype=int8)`  
+
+
+```python
+#Incluso podemos colocar varios condicionales para un solo array
+arr[(arr>5) & (arr<9)]
+```  
+Output : `array([6, 7, 8], dtype=int8)`  
+
+Se pueden transformar los datos no solo a traves de slices sino tambien usando condicionales:
+```python
+arr[arr > 5] = 100
+arr
+```  
+Output : `array([  1,   2,   3,   4,   5, 100, 100, 100, 100, 100], dtype=int8)`  
+
+Luego de modificados podemos hacer nuevas consultas 🤠, esto se trata de creatividad.
+```python
+arr[arr == 100]
+```  
+Output : `array([100, 100, 100, 100, 100], dtype=int8)`  
+
+
+
  
 
