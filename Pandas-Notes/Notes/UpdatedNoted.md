@@ -11,10 +11,12 @@
   - [x] [Condiciones](#condiciones)
   - [x] [Operaciones](#operaciones)  
 ### Pandas
-  - [x] [Series y DataFrames en Pandas](#series-y-dataframes-en-pandas)  
+  - [x] [Series y DataFrames en Pandas](#series-y-dataframes-en-pandas)
+  - [x] [Leer archivos CSV y JSON con Pandas](#leer-archivos-csv-y-json-con-pandas)  
+  - [x] [Filtrado con loc y iloc](#filtrado-con-loc-y-iloc)
 
 ### Numpy Array
-[Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
+[Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
 
 El array es el principal objeto de la librería. Representa datos de manera estructurada y se puede acceder a ellos a traves del indexado, a un dato específico o un grupo de muchos datos específicos. Las operaciones en Numpy son hasta 50 veces mas rapidas que en Python,  a continuacion se presenta la creacion de arrays de diferetes dimenciones.
 
@@ -460,17 +462,81 @@ df_players.columns
 ```  
 Output : `Index(['Jugador', 'Altura', 'Goles'], dtype='object')` 
 
+### Leer archivos CSV y JSON con Pandas  
  
 ```python
+import pandas as pd
 
+#Montamos un sistema local de archivos a colab 
+# en este caso el de google drive
+from google.colab import drive
+drive.mount('/content/drive')
+
+#Permite cargar modulos de Python es un magic command
+%reload_ext autoreload
+#Reload all modules except those excluded by %aimport 
+%autoreload 2
 ```  
-Output : `` 
+Output : `Drive already mounted at /content/drive` 
 
+ Asi cargamos archivos **csv** y **JSON**
+```python
+#Cagar archivos csv
+#A veces debemos usar el argumento 'sep' dependiendo
+# el seperador del archivo csv.
 
+#El arg 'header' permite definir que fila se debe tomar como header por defecto es igual a 0
+#El arg 'names' se refiere a los nombres de las columnas.
 
+df_countries = pd.read_csv('/content/drive/MyDrive/conda_data_science/data/raw/Metadata_Country.csv')
+```  
+Es poco comun leer archivos JSON, normalmente es csv o sql donde sql se convierte primero a csv.
+```python
+#Se puede realizar comunmente en datos estructurados como JSON
+#Podemos convertirlo a Series con el arg typ='Series'
 
+pd.read_json('/content/drive/MyDrive/conda_data_science/data/raw/students.json')
+```  
+Output:
+```
+	edad	cm	pais	genero	Q1	Q2
+0	10	115	co	M	5.0	7
+1	9	110	mx	F	10.0	9
+2	13	130	co	F	8.0	9
+3	14	155	mx	M	NaN	8
+4	12	125	mx	M	7.0	8
+5	11	120	ch	M	8.0	8
+6	12	125	ch	F	3.0	9
+```
 
+### Filtrado con loc y iloc
 
+```python
+#Filtrado por indices
+df_data[0:4]
+```  
+Output : 
+```
+edad	cm	pais	genero	Q1	Q2
+0	10	115	co	M	5.0	7
+1	9	110	mx	F	10.0	9
+2	13	130	co	F	8.0	9
+3	14	155	mx	M	NaN	8
+```
+#Filtrado por Columnas
+df_data[['edad','cm','pais']]
 
- 
+#Primero filtramos por indice y luego por Columna con loc
+#df_data.loc[0:4,'edad']
 
+#Primero filtramos por indice y luego por Columna con iloc
+df_data.iloc[0:4,:2]
+
+Output:
+```
+	edad	cm
+0	10	115
+1	9	  110
+2	13	130
+3	14	155
+```
