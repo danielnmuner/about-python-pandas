@@ -9,7 +9,9 @@
   - [x] [Funciones principales de NumPy](#funciones-principales-de-numPy) 
   - [x] [Copy](#copy)
   - [x] [Condiciones](#condiciones)
-  - [x] [Operaciones](#operaciones)
+  - [x] [Operaciones](#operaciones)  
+### Pandas
+  - [x] [Series y DataFrames en Pandas](#series-y-dataframes-en-pandas)  
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
@@ -379,6 +381,94 @@ Output : `array([[ 30,  80],
 A continuacion: **Como calcular la proyeccion de un vector sobre otro, [Video](https://www.youtube.com/watch?v=cq6jLrNqZL8)**, tener en cuenta que producto matricial no es lo mismo que producto escalar o entre dos vectores.  
 
 ![producto-escalar](https://user-images.githubusercontent.com/60556632/165134640-152ab8e1-1391-4d47-838d-a713f480af11.png)
+
+### Series y DataFrames en Pandas
+
+**Pandas Series**  
+
+Es como un array unidimensional de Numpy donde podemos: Buscar por indice y hacer Slicing, Operaciones aritmeticas sobre distintos tipos de datos
+
+**Pandas DataFrame**  
+
+Es como las estructuras matriciales de Numpy donde podemos hacer busqueda por indices, columnas o filas. 
+ 
+**Pandas Series**  
+```python
+import pandas as pd
+
+#Crear Series de los Jugadores del PSG
+#Si no definimos el indice este iniciara desde 0
+psg_players = pd.Series(['Navas','Mbappe','Neymar','Messi'], 
+                        index=[1,7,10,30]
+                        )
+psg_players
+```  
+Output : `1      Navas
+7     Mbappe
+10    Neymar
+30     Messi
+dtype: object` 
+ 
+```python
+#Es posible crear el Series a traves de un diccionario
+dict = {1:'Navas',7:'Mbappe',10:'Naymar',30:'Messi'}
+#Ahora pasamos el dict a Series de pandas y obtenemos lo mismo
+pd.Series(dict)
+```  
+Output : `1      Navas
+7     Mbappe
+10    Naymar
+30     Messi
+dtype: object` 
+
+ 
+```python
+#Realizar un slicing el cual se fija en la cantidad
+# de elementos mas no en el indice.
+psg_players[0:3]
+```  
+Output : `1      Navas
+7     Mbappe
+10    Neymar
+dtype: object` 
+
+**Pandas DataFrame**
+ 
+```python
+#Un DataFrame se puede definir como una super dict o JSON file
+# el DataFrame al menos tiene 3 dimenciones como se muestra:
+
+super_dict = {'Jugador':['Navas','Mbappe','Neymar','Messi'],
+ 'Altura':[183.0,170.0,170.0,165.0],
+ 'Goles':[2,200,200,200]}
+df_players = pd.DataFrame(super_dict, index=[1,7,10,30])
+df_players
+```  
+Output :| |Jugador |	Altura|Goles |
+| --- | --- | --- | --- |
+|1	| Navas |	183.0 |	2 |
+|7	| Mbappe |	170.0 |	200 |
+|10	| Neymar |	170.0	| 200 |
+|30	| Messi	| 165.0	| 200 |
+
+Igualmente podemos hacer consultas de columnas, indices y datos
+```python
+#Obtener columnas del DataFrame
+df_players.columns
+```  
+Output : `Index(['Jugador', 'Altura', 'Goles'], dtype='object')` 
+
+ 
+```python
+
+```  
+Output : `` 
+
+
+
+
+
+
 
  
 
