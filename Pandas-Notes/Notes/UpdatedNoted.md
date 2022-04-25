@@ -9,6 +9,7 @@
   - [x] [Funciones principales de NumPy](#funciones-principales-de-numPy) 
   - [x] [Copy](#copy)
   - [x] [Condiciones](#condiciones)
+  - [x] [Operaciones](#operaciones)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
@@ -316,7 +317,65 @@ arr[arr == 100]
 ```  
 Output : `array([100, 100, 100, 100, 100], dtype=int8)`  
 
+### Operaciones
 
+A diferencia de las listas en python, los arrays en Numpy nos permiten hacer todo tipo de operaciones matematicas. Por ejemplo si tratamos de hacer una operacion matematica con una lista es probale que no logremos el resultado esperado como se muestra a continuacion:  
+
+```python
+import numpy as np
+
+#Creamos una lista con python
+lista = [1,2]
+#Python no entiende la operacion que quiero aplicar
+lista * 2
+```  
+Output : `[1, 2, 1, 2]` 
+
+Si realizamos operaciones con numpy el resultado sera diferente.
+```python
+#Creamos un array con numpy y realizamos una copia🚀.
+arr = np.arange(0,10)
+arr_cp = arr.copy()
+arr_cp * 2 # Puede ser cualquier tipo de Operacion Aritmetica
+#y si hay un MathError no detiene el programa.
+```  
+Output : `array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])` 
+
+Realizar operaciones de **algebra lineal**✖️➕➖🟰
+```python
+arr + arr_cp 
+```  
+Output : `array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])` 
+
+```python
+#Usar matrices o tensores y operarlos
+matriz = arr.reshape(2,5)
+matriz_cp = matriz.copy()
+matriz + matriz_cp
+```  
+Output : `array([[ 0,  2,  4,  6,  8],
+       [10, 12, 14, 16, 18]])` 
+
+Si queremos calcular el producto punto solo debemos asegurarnos que los arrys tiene dimenciones iguales y que uno esta transpuesto:  
+ 
+```python
+#Transpuesta de matriz_cp
+matriz_cp.T
+```  
+Output : `#Transpuesta de matriz_cp matriz_cp.T` 
+
+Ahora si! hay varias formas de hacerlo:
+```python
+#Producto punto lo cual es muy util en la 
+#ciencia de datos por ejemplo en proyecciones
+np.matmul(matriz,matriz_cp.T)
+#'matriz @ matriz_cp.T' es lo mismo que 'np.matmul(matriz,matriz_cp.T)'
+```  
+Output : `array([[ 30,  80],
+       [ 80, 255]])` 
+
+A continuacion: Como calcular la proyeccion de un vector sobre otro, [Video](https://www.youtube.com/watch?v=cq6jLrNqZL8), tener en cuenta que producto matricial no es lo mismo que producto escalar o entre dos vectores. 
+![producto-escalar](https://user-images.githubusercontent.com/60556632/165134640-152ab8e1-1391-4d47-838d-a713f480af11.png)
 
  
 
