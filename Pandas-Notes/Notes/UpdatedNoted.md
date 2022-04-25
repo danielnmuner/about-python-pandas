@@ -14,6 +14,7 @@
   - [x] [Series y DataFrames en Pandas](#series-y-dataframes-en-pandas)
   - [x] [Leer archivos CSV y JSON con Pandas](#leer-archivos-csv-y-json-con-pandas)  
   - [x] [Filtrado con loc y iloc](#filtrado-con-loc-y-iloc)
+  - [x] [Agregar o eliminar datos con Pandas](#agregar-o-eliminar-datos-con-pandas)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
@@ -540,3 +541,85 @@ Output:
 2	13	130
 3	14	155
 ```
+
+### Agregar o eliminar datos con Pandas
+```python
+#Eliminamos columna 'edad' usamos arg inplace=True para que se guarde.
+df_data.drop('edad', axis=1, inplace=True)
+df_data
+```  
+Output : 
+```
+	cm	pais	genero	Q1	Q2
+0	115	co	M	5.0	7
+1	110	mx	F	10.0	9
+2	130	co	F	8.0	9
+3	155	mx	M	NaN	8
+4	125	mx	M	7.0	8
+5	120	ch	M	8.0	8
+6	125	ch	F	3.0	9
+```
+
+```python
+#Borrado de Filas
+df_data.drop([0,1,2],axis=0, inplace=True)
+df_data
+```  
+Output : 
+```
+cm	pais	genero	Q1	Q2
+3	155	mx	M	NaN	8
+4	125	mx	M	7.0	8
+5	120	ch	M	8.0	8
+6	125	ch	F	3.0	9
+```
+
+```python
+#Borrado de Rango de Filas
+df_data.drop(range(4,6),axis=0, inplace=True)
+df_data
+```  
+Output : 
+```
+cm	pais	genero	Q1	Q2
+3	155	mx	M	NaN	8
+6	125	ch	F	3.0	9
+```
+
+```python
+#Agregar Columnas
+import numpy as np
+df_data['New_column'] = np.nan
+df_data
+```  
+Output : 
+```
+cm	pais	genero	Q1	Q2	New_column
+3	155	mx	M	NaN	8	NaN
+6	125	ch	F	3.0	9	NaN
+```
+
+```python
+#Agregar filas
+df_data.append(df_data, ignore_index = True)
+```  
+Output : 
+```
+cm	pais	genero	Q1	Q2	New_column
+0	155	mx	M	NaN	8	NaN
+1	125	ch	F	3.0	9	NaN
+2	155	mx	M	NaN	8	NaN
+3	125	ch	F	3.0	9	NaN
+```
+
+
+
+
+```python
+
+```  
+Output : 
+```
+
+```
+
