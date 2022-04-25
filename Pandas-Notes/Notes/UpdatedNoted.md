@@ -444,12 +444,14 @@ super_dict = {'Jugador':['Navas','Mbappe','Neymar','Messi'],
 df_players = pd.DataFrame(super_dict, index=[1,7,10,30])
 df_players
 ```  
-Output :| |Jugador |	Altura|Goles |
+Output :
+
+|index |Jugador |	Altura|Goles |
 | --- | --- | --- | --- |
-|1	| Navas |	183.0 |	2 |
-|7	| Mbappe |	170.0 |	200 |
-|10	| Neymar |	170.0	| 200 |
-|30	| Messi	| 165.0	| 200 |
+| 1	| Navas |	183.0 |	2 |
+| 7	| Mbappe |	170.0 |	200 |
+| 10	| Neymar |	170.0	| 200 |
+| 30	| Messi	| 165.0	| 200 |
 
 Igualmente podemos hacer consultas de columnas, indices y datos
 ```python
