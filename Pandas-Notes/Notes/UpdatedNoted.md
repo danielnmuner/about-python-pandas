@@ -7,6 +7,7 @@
   - [x] [Creando arrays](#creando-arrays)
   - [x] [Shape y Reshape](#shape-y-reshape)
   - [x] [Funciones principales de NumPy](#funciones-principales-de-numPy) 
+  - [x] [Copy](#copy)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
@@ -224,11 +225,50 @@ np.concatenate((array_a, array_b), axis = 0)
 np.concatenate((array_a, array_b.T), axis = 1) 
 ```
 
+### Copy
 
+Lo correcto antes de empezar a manipular un objeto array o dataframe es crear una **copia** asi podremos hacer exploracion de datos con seguridad que no estamos deformando los datos originales.
 
+```python
+#Creamos un array de 1dim
+array_a = np.arange(0,10)
 
+#array_a se asigna a slice_array lo cual es un ERROR! 
+#por que aun es el mismo espacio en memoria en vez de ser uno nuevo.
+slice_array = array_a[0:6]
+slice_array
+```  
+Output : `array([0, 1, 2, 3, 4, 5])`
 
- 
+```python
+#Modificamos una parte del slice creyendo que solo estamos
+#modificando slice_array lo cual no es verdad.
+slice_array[:]=0
+slice_array
+```  
+Output : `array([0, 0, 0, 0, 0, 0])`
+
+```python
+#Si validamos array_a veremos que tambien fue modificado 😥
+array_a
+```  
+Output : `array([0, 0, 0, 0, 0, 0, 6, 7, 8, 9])` Shiit!  
+
+La forma correcta es crear una **copia** como se muestra a continuacion:
+```python
+array_a = np.arange(0,10)
+array_copy=array_a.copy()
+array_copy[:] = 10
+array_copy
+```  
+Output : `array([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])`  
+Y si verificamos nuestro array inicial veremos que no ubieron modificaciones 😊
+
+```python
+array_a
+```  
+Output : `array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])` 
+
  
  
 
