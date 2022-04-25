@@ -155,6 +155,76 @@ np.reshape(arr,(1,6), 'C')
 
 ### Funciones principales de NumPy
 
+Nos permiten realizar realizar estadisticos sobre arreglos e incluso concatenarlos.
+
+```python
+import numpy as np
+
+arr = np.random.randint(1,20,10) #Crear vector de 10 numeros con rango de 1 a 20
+matriz = arr.reshape(2,5) #Reshape a matriz de 2 X 5
+matriz = np.array([[15,  5,  8, 10,  8],[12,  8,  7, 10,  4]])
+#Output:
+#array([[15,  5,  8, 10,  8],
+#       [12,  8,  7, 10,  4]])
+
+# .max() o .min() permite hacer las mismas operaciones sobre arrays
+matriz.max() #Numero mas grande del array matricial
+matriz.max(1)# Numero por eje de rows -> array([15, 12])
+matriz.max(0)# Numero por eje de cols -> array([15, 8, 8, 10,  8])
+matriz.argmax()# Posicion num mas grande -> 0 donde 0 es 15
+matriz.argmax(1)# Posicion num mas grande eje rows -> array([0, 0])
+matriz.argmax(0)# Posicion num mas grande eje cols -> array([0, 1, 0, 0, 0])
+
+# .ptp() calcula la diferencia entre el .max() y .min()
+matriz.ptp() #Donde max = 15 min = 4 luego ptp() -> 11
+matriz.ptp(1) #Donde eje rows max = 15 min = 5
+              #Donde eje rows max = 12 min = 4
+              #Output array([10,  8])
+
+matriz.ptp(0) #Donde eje cols de restan y se obtienen valores absolutos
+              #Output array([ 3,  3,  1,  0, 4])
+
+
+np.percentile(matriz,50)#Es la mediana o percentil 50
+                        #Output: 8.0
+
+matriz.sort() #Ordenal los datos de menor a mayor
+
+np.median(matriz)#Output 8.0 es igual al percentil 50
+np.median(matriz, axis=0) #Median en Eje cols -> array([ 4.5,  7.5,  8. , 10. , 13.5])
+np.median(matriz, axis=1) #Median en Eje rows -> array([8., 8.])
+
+np.std(matriz)# Desviacion estandar de los datos -> 3.067
+np.var(matriz)# Varianza -> 9.409
+np.mean(matriz)# Media -> 8.7
+
+#Concatenar dos arrays como los que se muestran a continuacion:
+array_a = np.array([[1,2],[3,4]])
+array_b = np.array([5,6])
+
+np.concatenate((array_a, array_b))# ValueError: all the input arrays 
+                                  # must have same number of dimensions
+
+#Concatenar al eje de Cols
+np.concatenate((array_a, array_b), axis = 0)# ValueError: all the input arrays 
+                                  # must have same number of dimensions    
+
+#Para solucionarlo modificamos las dimenciones de array_b
+array_b = np.expand_dims(array_b, axis=0)
+np.concatenate((array_a, array_b), axis = 0) 
+
+#Output: array([[1, 2],
+       # [3, 4],
+       # [5, 6]])
+
+#Ahora para hacer la concatenacion en el axis = 1 o rows podemos
+#transponer array_b.T o hacer un array_b.reshape(2,1) de no ser asi
+# aparecera ValueError: all the input array dimensions for the concatenation 
+#axis must match exactly
+np.concatenate((array_a, array_b.T), axis = 1) 
+```
+
+
 
 
 
