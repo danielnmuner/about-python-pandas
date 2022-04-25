@@ -4,9 +4,9 @@
   - [x] [Numpy Array](#numpy-array)
   - [x] [Tipos de datos](#tipos-de-datos)
   - [x] [Dimensiones](#dimensiones)
-  - [x] [Creando arrays](creando-arrays)
-  - [x] [Shape y Reshape](shape-y-reshape)
-  - [x] [Funciones principales de NumPy](funciones-principales-de-numPy) 
+  - [x] [Creando arrays](#creando-arrays)
+  - [x] [Shape y Reshape](#shape-y-reshape)
+  - [x] [Funciones principales de NumPy](#funciones-principales-de-numPy) 
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)  
