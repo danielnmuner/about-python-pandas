@@ -1,4 +1,5 @@
 ## Transformacion de Datos con Numpy y Pandas - Carlos Alarcon
+### [Funciones Pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html)
 ### NumPy
 
   - [x] [Numpy Array](#numpy-array)
@@ -19,6 +20,8 @@
   - [x] [Filtrado por condiciones](#filtrado-por-condiciones) 
   - [x] [Funciones principales de Pandas](#funciones-principales-de-pandas)
   - [x] [Groupby](#groupby)
+  - [x] [Combinando DataFrames](#combinando-dataframes) 
+  - [x] [Merge y Concat](#merge-y-concat) 
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
@@ -876,19 +879,139 @@ df_students.groupby(['pais','genero']).agg({'edad':[min,max],'cm':sum})
 Output: 
 ![image](https://user-images.githubusercontent.com/60556632/165316091-d87fbbda-7e4d-4b58-b57d-156c667cbb69.png)
 
+### Combinando DataFrames
+
+**Merge-Join Pandas**
+![Combine DataFrames](https://user-images.githubusercontent.com/60556632/165316711-1daffc96-caa0-4b0f-9fc1-d25ef8c5675a.png)
+**Concat Axis 0 Pandas**
+![image](https://user-images.githubusercontent.com/60556632/165318657-496c3b6c-96bd-41e0-a93c-e60afab0d1f3.png)
+**Concat Axis 1 Pandas**
+![image](https://user-images.githubusercontent.com/60556632/165318894-af0f3c41-0706-4af2-83bf-9ec57afc698f.png)
+
+### Merge y Concat
+
+**Concat**
+```python
+#Creamos 2 DataFrames para realizar operaciones entre conjuntos
+df1 = pd.DataFrame({'A':['A0','A1','A2','A3'],
+ 'B':['B0','B1','B2','B3'],
+ 'C':['C0','C1','C2','C3'],
+ 'D':['D0','D1','D2','D3']})
+
+df2 = pd.DataFrame({'A':['A4','A5','A6','A7'],
+ 'B':['B4','B5','B6','B7'],
+ 'C':['C4','C5','C6','C7'],
+ 'D':['D4','D5','D6','D7']})
+ 
+#Concatenacion por axis=0 o Filas
+#Los indices se heredan por eso usamos ignore_index
+concat_axis_0 = pd.concat([df1,df2], axis=0, ignore_index=True)
+concat_axis_0
+```  
+![image](https://user-images.githubusercontent.com/60556632/165331603-beb6f8a5-c8f8-4f86-a584-5c276649c837.png)
 
   
 ```python
+#Usualmente se concatena por axis 0, pero tambien se puede
+#hacer a nivel de columnas o axis = 1
+concat_axis_1 = pd.concat([df1,df2], axis=1, ignore_index=True)
+concat_axis_1
 ```  
-Output: 
-```
-```
+![image](https://user-images.githubusercontent.com/60556632/165331705-0fa276d9-cdc3-4593-9bbd-c4efdb298631.png)
+
+**Merge**
+```python
+#Merge Pandas funciona como un inner join por default, creamos dos DataFrames
+left = pd.DataFrame({'key':['k0','k1','k2','k3'],
+ 'A':['A0','A1','A2','A3'],
+ 'B':['B0','B1','B2','B3']})
+
+right = pd.DataFrame({'key':['k0','k1','k2','k3'],
+ 'C':['C0','C1','C2','C3'],
+ 'D':['D0','D1','D2','D3']})
+
+#El merge se realiza sobre una columna especifica como key
+left.merge(right, on='key')
+```  
+![image](https://user-images.githubusercontent.com/60556632/165331781-93e8cb63-902d-43a7-aa5e-ac649d3cf25d.png)
 
   
 ```python
+#Merge Pandas, modificamos DataFrames
+left = pd.DataFrame({'key':['k0','k1','k2','k3'],
+ 'A':['A0','A1','A2','A3'],
+ 'B':['B0','B1','B2','B3']})
+#Intencionalmente cambiamos el key a key2
+right = pd.DataFrame({'key2':['k0','k1','k2','k3'],
+ 'C':['C0','C1','C2','C3'],
+ 'D':['D0','D1','D2','D3']})
+
+#El merge solo funcionara si se especifican las columnas
+#de cada df por separado
+left.merge(right, left_on='key', right_on='key2')
+```  
+![image](https://user-images.githubusercontent.com/60556632/165331852-064020b5-b06a-4fb4-87c6-cd826746146e.png)
+
+  
+```python
+#Merge Pandas, creamos dos DataFrames
+left = pd.DataFrame({'key':['k0','k1','k2','k3'],
+ 'A':['A0','A1','A2','A3'],
+ 'B':['B0','B1','B2','B3']})
+#Intencionalmente cambiamos el key a key2 y k3 a nan
+right = pd.DataFrame({'key2':['k0','k1','k2',np.nan],
+ 'C':['C0','C1','C2','C3'],
+ 'D':['D0','D1','D2','D3']})
+
+#El merge solo funcionara para los k0,k1,k2 no para k3
+#k3 ya no hace parte de la coincidencias
+left.merge(right, left_on='key', right_on='key2')
+```  
+![image](https://user-images.githubusercontent.com/60556632/165331935-fe0b6ca3-29bf-4647-b405-a4181bb13660.png)
+
+  
+```python
+#Merge como un left join, dando prioridad a left
+left = pd.DataFrame({'key':['k0','k1','k2','k3'],
+ 'A':['A0','A1','A2','A3'],
+ 'B':['B0','B1','B2','B3']})
+#Intencionalmente cambiamos el key a key2 y k3 a nan
+right = pd.DataFrame({'key2':['k0','k1','k2',np.nan],
+ 'C':['C0','C1','C2','C3'],
+ 'D':['D0','D1','D2','D3']})
+
+#Asi se veria un left joint usando 'how'
+#Esto seria igual si lo hacemos con right join
+left.merge(right, left_on='key', right_on='key2', how='left')
 ```  
 Output: 
-```
-```
+![image](https://user-images.githubusercontent.com/60556632/165332052-ccd18f98-97a6-4ba4-b07e-343db0f182de.png)
 
 
+**Join**
+
+```python
+#Join a diferencia de merge se basa en la filas
+#creamos un df_left y df_right y le asignamos un indice
+df_left = pd.DataFrame({'A':['A0','A1','A2'],
+ 'B':['B0','B1','B2']}, index=['k0','k1','k2'],)
+
+#Intencionalmente saltamos el indice k1 de df_left
+df_right = pd.DataFrame({'C':['C0','C1','C2'],
+ 'D':['D0','D1','D2']}, index=['k0','k2','k3'])
+
+#Se realiza left join por default
+df_left.join(df_right)'
+```
+
+Output:
+![image](https://user-images.githubusercontent.com/60556632/165334348-455fef20-37bf-4fa3-91d4-ae6031d7488f.png)
+
+```python
+#Podemos realizar diferentes tipos de joins a traves de 'how'
+df_left.join(df_right, how='inner')
+#how ='left'
+#how ='outer'
+#how ='inner'
+#how ='right'
+```
