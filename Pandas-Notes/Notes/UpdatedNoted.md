@@ -18,6 +18,7 @@
   - [x] [Manejo de datos nulos](#manejo-de-datos-nulos) 
   - [x] [Filtrado por condiciones](#filtrado-por-condiciones) 
   - [x] [Funciones principales de Pandas](#funciones-principales-de-pandas)
+  - [x] [Groupby](#groupby)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
@@ -828,3 +829,66 @@ edad	cm	pais	genero	Q1	Q2
 0	10	115	co	M	5.0	7
 1	9	110	mx	F	10.0	9
 ```
+
+### Groupby
+  
+```python
+#Agrupamos por 'pais' el cual es una columna categorica 
+#Y realizamos el conteo por categoria de todo el dataframe
+df_students.groupby('pais').count()
+```  
+Output: 
+```
+edad	cm	genero	Q1	Q2
+pais					
+ch	2	2	2	2	2
+co	2	2	2	2	2
+mx	3	3	3	2	3
+```
+
+  
+```python
+alores maximos por categoria
+#Podemos usar todo tipo de funciones de Agregacion
+df_students.groupby('pais').max()
+```  
+Output: 
+```
+edad	cm	genero	Q1	Q2
+pais					
+ch	12	125	M	8.0	9
+co	13	130	M	8.0	9
+mx	14	155	M	10.0	9
+```
+
+  
+```python
+#Indicar varias funciones
+df_students.groupby('pais').agg([min,max])
+```  
+Output: 
+![image](https://user-images.githubusercontent.com/60556632/165316012-152994cb-e06d-414f-9e3b-23bc25d84e32.png)
+  
+```python
+#Funciones de Agregacion a traves de diccionario
+df_students.groupby(['pais','genero']).agg({'edad':[min,max],'cm':sum})
+```  
+Output: 
+![image](https://user-images.githubusercontent.com/60556632/165316091-d87fbbda-7e4d-4b58-b57d-156c667cbb69.png)
+
+
+  
+```python
+```  
+Output: 
+```
+```
+
+  
+```python
+```  
+Output: 
+```
+```
+
+
