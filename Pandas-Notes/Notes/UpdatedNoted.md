@@ -15,6 +15,7 @@
   - [x] [Leer archivos CSV y JSON con Pandas](#leer-archivos-csv-y-json-con-pandas)  
   - [x] [Filtrado con loc y iloc](#filtrado-con-loc-y-iloc)
   - [x] [Agregar o eliminar datos con Pandas](#agregar-o-eliminar-datos-con-pandas)
+  - [x] [Manejo de datos nulos](#manejo-de-datos-nulos) 
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
@@ -612,14 +613,116 @@ cm	pais	genero	Q1	Q2	New_column
 3	125	ch	F	3.0	9	NaN
 ```
 
+### Manejo de datos nulos
+
+```python
+import pandas as pd
+import numpy as np
+
+#Creamos un diccionario con valores nulos
+dict = {'col1':[1,2,3,np.nan],
+ 'col2':[4,np.nan,6,7],
+ 'col3':['a','b','c',None]}
+
+df = pd.DataFrame(dict)
+df
+```  
+Output : 
+```
+col1	col2	col3
+0	1.0	4.0	a
+1	2.0	NaN	b
+2	3.0	6.0	c
+3	NaN	7.0	None
+```
+
+```python
+#Nos indica los valores nulos del dataframe
+df.isnull()*1 # Lo multiplicamos por 1 para que sea mas facil filtar
+```  
+Output : 
+```
+col1	col2	col3
+0	0	0	0
+1	0	1	0
+2	0	0	0
+3	1	0	1
+```
+
+Reemplazar los valores nulos
+**String**
+```python
+#Rellenar valores nulos con la palabra 'Missing'
+df.fillna('Missing')
+```  
+Output : 
+```
+col1	col2	col3
+0	1.0	4.0	a
+1	2.0	Missing	b
+2	3.0	6.0	c
+3	Missing	7.0	Missing
+```
+**Estadistico**
+```python
+#Rellena con la media de los valores por columna
+df.fillna(df.mean())
+```  
+Output : 
+```
+col1	col2	col3
+0	1.0	4.000000	a
+1	2.0	5.666667	b
+2	3.0	6.000000	c
+3	2.0	7.000000	None
+```
+
+**Interpolacion**
+```python
+#Interpola los datos como si se tratade de una serie
+df.interpolate()
+```  
+Output : 
+```
+col1	col2	col3
+0	1.0	4.0	a
+1	2.0	5.0	b
+2	3.0	6.0	c
+3	3.0	7.0	None
+```
+**Borrar Nulos**
+```python
+#Borra todas las filas con valores nulos
+df.dropna()
+#Igual pero se base en una columna especifica
+df.dropna(subset=['col2'])
+```  
+Output : 
+```
+	col1	col2	col3
+0	1.0	4.0	a
+2	3.0	6.0	c
+3	NaN	7.0	None
+```
+
 
 
 
 ```python
-
 ```  
 Output : 
 ```
 
 ```
+```python
+```  
+Output : 
+```
 
+```
+```python
+```  
+Output : 
+```
+
+```
