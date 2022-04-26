@@ -6,7 +6,7 @@
   - [x] [Dimensiones](#dimensiones)
   - [x] [Creando arrays](#creando-arrays)
   - [x] [Shape y Reshape](#shape-y-reshape)
-  - [x] [Funciones principales de NumPy](#funciones-principales-de-numPy) 
+  - [x] [Funciones principales de NumPy](#funciones-principales-de-numpy) 
   - [x] [Copy](#copy)
   - [x] [Condiciones](#condiciones)
   - [x] [Operaciones](#operaciones)  
@@ -16,6 +16,8 @@
   - [x] [Filtrado con loc y iloc](#filtrado-con-loc-y-iloc)
   - [x] [Agregar o eliminar datos con Pandas](#agregar-o-eliminar-datos-con-pandas)
   - [x] [Manejo de datos nulos](#manejo-de-datos-nulos) 
+  - [x] [Filtrado por condiciones](#filtrado-por-condiciones) 
+  - [x] [Funciones principales de Pandas](#funciones-principales-de-pandas)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
@@ -704,25 +706,125 @@ Output :
 2	3.0	6.0	c
 3	NaN	7.0	None
 ```
+### Filtrado por condiciones
 
+Cargamos un DataFrame en Google Coolab
+|	|edad|	cm |	pais |	genero	| Q1	| Q2 |
+| ---   | --- | --- | --- | --- | --- | ---|
+|0	|10	|115	|co	|M	|5.0	|7
+|1	|9	|110	|mx	|F	|10.0	|9
+|2	|13	|130	|co	|F	|8.0	|9
+|3	|14	|155	|mx	|M	|NaN	|8
+|4	|12	|125	|mx	|M	|7.0	|8
+|5	|11	|120	|ch	|M	|8.0	|8
+|6	|12	|125	|ch	|F	|3.0	|9
 
+### Funciones principales de Pandas
 
-
+[Funciones](https://pandas.pydata.org/docs/user_guide/10min.html)
 ```python
+import pandas as pd
+import numpy as np
+
+#Funciones importantes en pandas
+#Info nos describe los tipos de datos
+df_students.info()
 ```  
 Output : 
 ```
-
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 7 entries, 0 to 6
+Data columns (total 6 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   edad    7 non-null      int64  
+ 1   cm      7 non-null      int64  
+ 2   pais    7 non-null      object 
+ 3   genero  7 non-null      object 
+ 4   Q1      6 non-null      float64
+ 5   Q2      7 non-null      int64  
+dtypes: float64(1), int64(3), object(2)
+memory usage: 392.0+ bytes
 ```
 ```python
+#Nos muestra algunos estadisticos basicos
+# Asi podemos entender la distribucion de los datos
+df_students.describe()
 ```  
 Output : 
 ```
-
+edad	cm	Q1	Q2
+count	7.000000	7.000000	6.000000	7.000000
+mean	11.571429	125.714286	6.833333	8.285714
+std	1.718249	14.556949	2.483277	0.755929
+min	9.000000	110.000000	3.000000	7.000000
+25%	10.500000	117.500000	5.500000	8.000000
+50%	12.000000	125.000000	7.500000	8.000000
+75%	12.500000	127.500000	8.000000	9.000000
+max	14.000000	155.000000	10.000000	9.000000
 ```
 ```python
+#La cantidad de memoria en bits que esta usando el DataFrame
+df_students.memory_usage(deep=True)
 ```  
 Output : 
 ```
+Index      56
+edad       56
+cm         56
+pais      413
+genero    406
+Q1         56
+Q2         56
+dtype: int64
+```
 
+```python
+#Cuenta el total de cada categoria en una columna
+df_students['pais'].value_counts()
+```  
+Output : 
+```
+mx    3
+co    2
+ch    2
+Name: pais, dtype: int64
+```
+
+```python
+#Repetimos una de las filas intensionalmente
+#para usar la funcion borrar duplicados
+
+#Añadimos row0 al final
+df_students = df_students.append(df_students.iloc[0])
+df_students.drop_duplicates(keep='last')#Mantiene ultimo Duplicado
+```  
+Output : 
+```
+	edad	cm	pais	genero	Q1	Q2
+1	9	110	mx	F	10.0	9
+2	13	130	co	F	8.0	9
+3	14	155	mx	M	NaN	8
+4	12	125	mx	M	7.0	8
+5	11	120	ch	M	8.0	8
+6	12	125	ch	F	3.0	9
+0	10	115	co	M	5.0	7
+```
+
+```python
+#Permite ordenar el Dataframe segun una columna
+df_students.sort_values('cm',ascending=False)#Mayor a Menor
+```  
+Output : 
+```
+edad	cm	pais	genero	Q1	Q2
+3	14	155	mx	M	NaN	8
+2	13	130	co	F	8.0	9
+4	12	125	mx	M	7.0	8
+6	12	125	ch	F	3.0	9
+5	11	120	ch	M	8.0	8
+0	10	115	co	M	5.0	7
+0	10	115	co	M	5.0	7
+0	10	115	co	M	5.0	7
+1	9	110	mx	F	10.0	9
 ```
