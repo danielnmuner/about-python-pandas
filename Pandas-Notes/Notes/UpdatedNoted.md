@@ -22,6 +22,8 @@
   - [x] [Groupby](#groupby)
   - [x] [Combinando DataFrames](#combinando-dataframes) 
   - [x] [Merge y Concat](#merge-y-concat) 
+  - [x] [Pivot y Melt](#pivot-y-melt)
+  - [x] [Apply](#apply)
 
 ### Numpy Array
 [Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
@@ -1015,3 +1017,63 @@ df_left.join(df_right, how='inner')
 #how ='inner'
 #how ='right'
 ```
+
+### Pivot y Melt
+
+Pivot, básicamente, transforma los valores de determinadas columnas o filas en los índices de un nuevo DataFrame, y la intersección de estos es el valor resultante.
+
+![image](https://user-images.githubusercontent.com/60556632/165361143-ea8d3766-3a31-45db-979b-f3bbda053718.png)
+
+```python
+#Pivot table es como una table dinamica en excel, solo tenemos que indicar
+#cuales son las filas, columnas y de donde vienen los datos
+df_students.pivot_table(index='pais',columns='genero',values='edad')
+```
+
+![image](https://user-images.githubusercontent.com/60556632/165361196-cd2658dc-17ac-473d-96cb-b5b1a49fd084.png)
+
+```python
+#Melt convierte columnas a filas 
+df_students[['pais','genero']].melt()
+```
+![image](https://user-images.githubusercontent.com/60556632/165361293-64de9c4a-6ac5-42c9-985d-560f50578918.png)
+
+### Apply
+
+```python
+#Creamos una funcion de Python
+def two_times(values):
+  return values * 2
+
+#Utilizamos 'apply' y asi todos los valores de 'cm' 
+# se pasan por la funcion 'two_times' 
+#Crear un nueva columna con el calculo realizado
+df_students['cm'].apply(two_times)
+```
+Output:
+
+```
+0    230
+1    220
+2    260
+3    310
+4    250
+5    240
+6    250
+Name: cm, dtype: int64
+```
+```python
+#Lambdas con apply
+df_students['lamda_1'] = df_students['cm'].apply(lambda x : x * 3)
+df_students
+```
+![image](https://user-images.githubusercontent.com/60556632/165390439-bd88277c-f067-43b2-842b-6bf06f5b4254.png)
+
+```python
+#Lambda en todo el DataFrame
+df_students['lamda_2'] = df_students.apply(lambda x : x['cm'] * 2 if x['genero'] == 'M' else x['cm'], axis=1)
+df_students
+```
+Output: 
+
+![image](https://user-images.githubusercontent.com/60556632/165390556-1c6e629e-5d6b-4b96-b55f-f283d5ebb173.png)
