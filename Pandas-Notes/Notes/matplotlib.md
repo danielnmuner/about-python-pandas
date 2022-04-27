@@ -6,6 +6,7 @@
   - [x] [Subplot](#subplot) 
   - [x] [Método orientado a objetos](#método-orientado-a-objetos) 
   - [x] [Subplots](#subplots)
+  - [x] [Leyendas, etiquetas, títulos, tamaño](#leyendas-,-etiquetas-,-títulos-,-tamaño)
 
 
 ### La importancia de la visualización de datos
@@ -218,4 +219,44 @@ axes[1,1].plot(x,np.cos(x),'b')
 fig.tight_layout()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165432624-fd644ed8-d707-4c18-9ba5-e06e4fb0e24b.png)
+
+### Leyendas, etiquetas, títulos, tamaño
+
+```python
+#A continuacion le daremos mas contexto a los graficos
+#Creamos objetos fig y axes
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0,5,11)
+y = np.sin(x)
+
+#Cambiamos el tamaño todo el Lienzo conÑ 
+#figsize=(len_x,len_y)
+fig, axes = plt.subplots(1,2,figsize=(5,5))
+
+#Titulo axes[0]
+axes[0].set_title('Relacion_X Y')
+#Ejes
+axes[0].set_xlabel('Axis X')
+axes[0].set_ylabel('Axis Y')
+#Etiquetamos dentro de 'plot' y con lenged
+axes[0].plot(x,y,'b',label='$sin(x)$')
+axes[0].legend()
+
+#Titulo axes[1]
+axes[1].set_title('Relacion_Y X')
+#Ejes
+axes[1].set_xlabel('Axis Y')
+axes[1].set_ylabel('Axis X')
+#Etiquetamos dentro de 'plot' y con lenged
+#dentro del signo $$ podemos colocar notacion matematica
+axes[1].plot(y,x,'m',label='$sin(y)$')
+axes[1].legend()
+
+#Controla el padding entre bordes de los axes
+fig.tight_layout()
+```
+![image](https://user-images.githubusercontent.com/60556632/165434284-1c7236d7-6552-4e34-9005-c44750f16a3f.png)
 
