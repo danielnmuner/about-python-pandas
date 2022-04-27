@@ -4,6 +4,7 @@
 ### Matplotlib
   - [x] [La importancia de la visualización de datos](#la-importancia-de-la-visualización-de-datos)
   - [x] [Subplot](#subplot) 
+  - [x] [Método orientado a objetos](#método-orientado-a-objetos) 
 
 
 ### La importancia de la visualización de datos
@@ -121,4 +122,39 @@ plt.hist(y) # Histograma de Y
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165413712-eeed0c98-e751-4307-9af6-f708990ad75e.png)
+
+### Método orientado a objetos
+
+```python
+#Object Oriented
+# - Requiere mas codigo pero vale la pena
+# - Mayor personalizacion
+# - Mas amigable a mulipple graficos
+# - Mas codigo
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0,5,11)
+y = x ** 2
+
+#Creamos el objeto fig. El metodo figure() es el liezo
+#donde van las graficas
+fig = plt.figure()
+
+#Definimos las dimenciones y posicion del Lienzo de cada grafico
+#add_axes([pos_x,pos_y,len_x,len_y])
+
+axes = fig.add_axes([0.1,0.1,0.8,0.9])
+axes2 = fig.add_axes([0.2,0.55,0.4,0.3])
+
+#Graficamos axes como objetos independientes
+axes.plot(x,y,'b')
+axes2.plot(y,x,'m')
+
+#Mostrar objeto fig o lienzos
+fig.show()
+```
+
+![image](https://user-images.githubusercontent.com/60556632/165423223-c5e00e5a-40c7-4a99-b286-6bcb1666e690.png)
 
