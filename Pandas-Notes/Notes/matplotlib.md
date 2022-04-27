@@ -7,6 +7,7 @@
   - [x] [Método orientado a objetos](#método-orientado-a-objetos) 
   - [x] [Subplots](#subplots)
   - [x] [Leyendas, etiquetas, títulos, tamaño](#leyendas-,-etiquetas-,-títulos-,-tamaño)
+  - [x] [Colores y estilos](#colores-y-estilos)
 
 
 ### La importancia de la visualización de datos
@@ -262,3 +263,45 @@ fig.tight_layout()
 
 **Aporte de Platzi**
 ![image](https://user-images.githubusercontent.com/60556632/165434546-efb4131e-d310-4e97-b8fa-f292c38f53ea.png)
+
+### Colores y estilos
+
+**[Estilos de Linea](https://matplotlib.org/3.5.1/tutorials/colors/colors.html)**
+
+```python
+#Colores y estilos
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0,5,11)
+
+#Mostrar en pantalla los estilos con lo que 
+#puedo trabajar
+print(plt.style.available)
+```
+```
+['Solarize_Light2', '_classic_test_patch', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn', 'seaborn-bright', 'seaborn-colorblind', 'seaborn-dark', 'seaborn-dark-palette', 'seaborn-darkgrid', 'seaborn-deep', 'seaborn-muted', 'seaborn-notebook', 'seaborn-paper', 'seaborn-pastel', 'seaborn-poster', 'seaborn-talk', 'seaborn-ticks', 'seaborn-white', 'seaborn-whitegrid', 'tableau-colorblind10']
+```
+```python
+#Creamos un plot y aplicamos alguno de los stilos
+#en plt.style.available de la siguiente forma:
+plt.style.use('fivethirtyeight')
+fig, ax = plt.subplots(figsize=(8,4))
+
+#Finalmente graficamos con mas stilos:
+#Opcionalmente a 'g2-' esta por separado:
+
+#color='#66ffc4'
+#marker='0', markersize=10, markerfacecolor='#66ffc4'
+#linestyle='--'
+
+#linewidth=1.0
+
+ax.plot(x,x,'m3--',linewidth=1.0,markerfacecolor='#ffffff')
+ax.plot(x,2*x,'g2-',linewidth=1.0)
+ax.plot(x,3*x,'bo:',linewidth=1.0)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165532044-087f4af6-1c72-43fc-8070-1c5d650ee333.png)
+
+
+
