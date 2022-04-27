@@ -260,3 +260,5 @@ fig.tight_layout()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165434284-1c7236d7-6552-4e34-9005-c44750f16a3f.png)
 
+**Aporte de Platzi**
+![image](https://user-images.githubusercontent.com/60556632/165434546-efb4131e-d310-4e97-b8fa-f292c38f53ea.png)
