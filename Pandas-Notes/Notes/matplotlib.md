@@ -5,6 +5,7 @@
   - [x] [La importancia de la visualización de datos](#la-importancia-de-la-visualización-de-datos)
   - [x] [Subplot](#subplot) 
   - [x] [Método orientado a objetos](#método-orientado-a-objetos) 
+  - [x] [Subplots](#subplots)
 
 
 ### La importancia de la visualización de datos
@@ -155,6 +156,66 @@ axes2.plot(y,x,'m')
 #Mostrar objeto fig o lienzos
 fig.show()
 ```
+![image](https://user-images.githubusercontent.com/60556632/165430699-726c10ef-d88b-4a94-8f71-2361f69f8c24.png)
 
+**Partes de Fig**
 ![image](https://user-images.githubusercontent.com/60556632/165423223-c5e00e5a-40c7-4a99-b286-6bcb1666e690.png)
+
+### Subplots
+
+```python
+#Object Oriented
+# - Requiere mas codigo pero vale la pena
+# - Mayor personalizacion
+# - Mas amigable a mulipple graficos
+# - Mas codigo
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0,5,11)
+y = np.sin(x)
+
+#Definimos objetos fig y axes, en otras palabras
+#crear el lienzo para luego graficar 1 row X 2 cols
+fig, axes = plt.subplots(nrows=1,ncols=2) #Diferente de Subplot
+
+#Primer grafico en la posicion [0]
+axes[0].plot(x,y,'b')
+#Primer grafico en la posicion [1]
+axes[1].plot(y,x,'g')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165432534-4d5087e2-0b85-4c32-bd1f-fcce39f336bc.png)
+
+```python
+#Como la salida es un array entonces podemos definir
+#previamente el nombre de los axes en vez de usar posiciones 
+fig, (ax1,ax2) = plt.subplots(nrows=1,ncols=2) #Diferente de Subplot
+
+#Exactamente igual al grafico anterior, a esto nos referimos 
+#con orientado a objetos independientes
+ax1.plot(x,y,'b')
+ax2.plot(y,x,'g')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165432534-4d5087e2-0b85-4c32-bd1f-fcce39f336bc.png)
+
+
+```python
+#Si creamos un lienzo de tipo matricial
+#axes se debe indicar la posicion a menos que 
+#(ax1,ax2,ax3,ax4)
+fig, axes = plt.subplots(nrows=2,ncols=2)
+
+#Indicamos la posicion de acada axes.
+axes[0,0].plot(x,np.cos(x),'y')
+axes[0,1].plot(x,np.sin(x),'r')
+axes[1,0].plot(x,np.tan(x),'m')
+axes[1,1].plot(x,np.cos(x),'b')
+
+#Controla el padding entre bordes de los figs
+fig.tight_layout()
+```
+![image](https://user-images.githubusercontent.com/60556632/165432624-fd644ed8-d707-4c18-9ba5-e06e4fb0e24b.png)
 
