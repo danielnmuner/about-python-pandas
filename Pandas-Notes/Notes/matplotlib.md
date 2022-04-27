@@ -8,6 +8,7 @@
   - [x] [Subplots](#subplots)
   - [x] [Leyendas, etiquetas, títulos, tamaño](#leyendas-,-etiquetas-,-títulos-,-tamaño)
   - [x] [Colores y estilos](#colores-y-estilos)
+  - [x] [Bar Plot](#bar-plot)
 
 
 ### La importancia de la visualización de datos
@@ -18,6 +19,7 @@
 ![image](https://matplotlib.org/cheatsheets/_images/handout-intermediate.png)
 ![image](https://matplotlib.org/cheatsheets/_images/cheatsheets-2.png)
 ![image](https://matplotlib.org/cheatsheets/_images/handout-tips.png)
+
 
 ### Pyplot básico [Funciones](https://matplotlib.org/stable/plot_types/basic/plot.html)
 
@@ -303,5 +305,35 @@ plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165532044-087f4af6-1c72-43fc-8070-1c5d650ee333.png)
 
+### Bar Plot
+
+```python
+#Los graficos de barras nos permiten 
+#graficar variables categoricas
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+#Creamos una lista de Pises y de poblacion
+country = ['Colombia','Usa','España','Alemania', 'Corea']
+population = [1000,800,900,1000,300]
+
+#En X van la variables categoricas
+#width=0.5 ancho de las barras
+#color=['#ffffff','r'], icluso color por cada barra.
+#plt.xticks permite modificar etiquetas eje X y rotation
+
+plt.bar(country,population, width=0.5,color=['#34ffff','b'])
+plt.xticks(np.arange(5),('Colombia','Usa','España','Alemania', 'Corea'), rotation=45)
+plt.show
+```
+![image](https://user-images.githubusercontent.com/60556632/165535022-8882948c-5f62-4d32-8e52-1bd0657853c0.png)
+
+```python
+#Posicionar la barras horizontalmente
+plt.barh(country,population)
+plt.show
+```
+![image](https://user-images.githubusercontent.com/60556632/165535138-28ef3588-d754-4b63-8294-1006cf284945.png)
 
 
