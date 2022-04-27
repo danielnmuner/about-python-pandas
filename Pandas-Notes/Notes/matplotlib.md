@@ -7,4 +7,96 @@
 
 ### La importancia de la visualización de datos
 
+**Cheatsheets** valiosas
+![image](https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png)
+![image](https://matplotlib.org/cheatsheets/_images/handout-beginner.png)
+![image](https://matplotlib.org/cheatsheets/_images/handout-intermediate.png)
+![image](https://matplotlib.org/cheatsheets/_images/cheatsheets-2.png)
+![image](https://matplotlib.org/cheatsheets/_images/handout-tips.png)
+
+### Pyplot básico [Funciones](https://matplotlib.org/stable/plot_types/basic/plot.html)
+
+```python
+#Importamos la libreria de Matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Creamos un array con linspace el cual particiona un rango
+#en este caso 0 a 5 en 11 partes iguales
+x =  np.linspace(0,5,11)
+y = x ** 2 #Funcion cuadratica
+
+#Definine los ejes X, Y con plot(X,Y), ademas de formato con 'bs-'
+#Ejemplo: plot(x,y,'color,string,tipo_linea') 
+plt.plot(x,y,'bs-')
+#Para que se muestre la grafica usamos:
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165412747-d3cbe9ae-5584-4d84-b313-c318924dfeff.png)
+
+```python
+#Graficar X en un histograma cambiando 'plot' por 'hist'
+plt.hist(x)
+#plt.pie(x) Grafico de pastel
+#plt.scatter(x,y) Grafico de correlacion
+#plt.boxplot(x) Grafico de cajas
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165412773-5d6479fe-0707-439f-b309-46cbddf0257e.png)
+
+
+Fomato en Graficas con Matplotlib.pyplot
+
+**Formatos de Strings**
+
+| character | description            |
+| --------- | ---------------------- |
+| ‘.’       | point marker           |
+| ‘,’       | pixel marker           |
+| ‘o’       | circle marker          |
+| ‘v’       | triangle\_down marker  |
+| ‘^’       | triangle\_up marker    |
+| ‘<’       | triangle\_left marker  |
+| ‘>’       | triangle\_right marker |
+| ‘1’       | tri\_down marker       |
+| ‘2’       | tri\_up marker         |
+| ‘3’       | tri\_left marker       |
+| ‘4’       | tri\_right marker      |
+| ‘8’       | octagon marker         |
+| ‘s’       | square marker          |
+| ‘p’       | pentagon marker        |
+| ‘P’       | plus (filled) marker   |
+| ‘\*’      | star marker            |
+| ‘h’       | hexagon1 marker        |
+| ‘H’       | hexagon2 marker        |
+| ‘+’       | plus marker            |
+| ‘x’       | x marker               |
+| ‘X’       | x (filled) marker      |
+| ‘D’       | diamond marker         |
+| ‘d’       | thin\_diamond marker   |
+| ‘|’       | vline marker           |
+| ‘\_’      | hline marker           |
+
+**Tipos de Lineas**
+
+| character | description         |
+| --------- | ------------------- |
+| ‘-’       | solid line style    |
+| ‘–’       | dashed line style   |
+| ‘-.’      | dash-dot line style |
+| ‘:’       | dotted line style   |
+
+
+**Colores**
+| character | color   |
+| --------- | ------- |
+| ‘b’       | blue    |
+| ‘g’       | green   |
+| ‘r’       | red     |
+| ‘c’       | cyan    |
+| ‘m’       | magenta |
+| ‘y’       | yellow  |
+| ‘k’       | black   |
+| ‘w’       | white   |
+
 
