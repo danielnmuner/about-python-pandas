@@ -3,6 +3,7 @@
 
 ### Matplotlib
   - [x] [La importancia de la visualización de datos](#la-importancia-de-la-visualización-de-datos)
+  - [x] [Subplot](#subplot) 
 
 
 ### La importancia de la visualización de datos
@@ -99,4 +100,25 @@ Fomato en Graficas con Matplotlib.pyplot
 | ‘k’       | black   |
 | ‘w’       | white   |
 
+### Subplot
+```python 
+#Subplot es una herramienta que nos permite colocar varios graficos
+#Creamos un array usando numpy
+
+x = np.linspace(0,5,11)
+y = x ** 2
+
+#subplot de 1 row X 2 cols luego son dos graficos
+#por tanto de indica en el 3er arg si es el 1 o el 2
+
+plt.subplot(1,2,1) #1er Grafico dos en uno
+
+plt.plot(x,y,'g--') #Relacion X,Y
+plt.plot(y,x,'g--') #Relacion Y,X
+
+plt.subplot(1,2,2) #2er Grafico
+plt.hist(y) # Histograma de Y
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165413712-eeed0c98-e751-4307-9af6-f708990ad75e.png)
 
