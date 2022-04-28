@@ -477,4 +477,70 @@ plt.show()
 
 ### Distribuciones
 
+```python
+#Opciones para realizar distribuciones numericas en sns
+
+#Importamos Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Cargamos un dataset built-in sns
+tips = sns.load_dataset('tips')
+
+#Asi ejecutamos un histograma donde podemos ver 
+#la frecuencia de los 'tip', esta frecuencia puede ser
+#modificada usando los bins. 
+
+#cumulative=True, permite que se vallan sumando las frecuencias
+sns.histplot(data=tips, x='tip', bins=10, cumulative=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165823815-90f2e4bc-06e0-4d27-8703-4f71cf6635ee.png)
+
+```python
+#Categorizamos el grafico a partir de hue='sex'
+
+#Se puede graficar un estadistico especifico a partir de:
+#stat='probability', stat='frecuency', stat='percent'
+#stat='density', stat='count'-> defaul
+
+#Indicamos como queremos presentar los datos
+#multiple='stack', multiple='layer',multiple='dodge',multiple='fill'
+#element="step"
+
+sns.histplot(data=tips, x='tip', bins=10, cumulative=False, hue='sex'
+,stat='probability', multiple='dodge')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165823879-b024ffb5-0017-4fa0-b7f3-0783ecc58a38.png)
+
+```python
+#Grafico de densidad de tip, donde al parecer los
+#hombres dejn mas propina que las mujeres
+
+#Al igual que en el histograma podemos usar la propiedad
+#cumulative=True/False
+#shade=True, para sombrear el area bajo la curva
+#bs_adjust=1, ajusta la grafica de acuerdo a los ejes
+
+sns.kdeplot(data=tips, x='tip', hue='sex', shade=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165823941-2ff2feed-11c5-4e80-bbd8-d47703ca8838.png)
+
+```python
+#Grafico escalonado que indica las proporciones o tasa de cambio
+#puede ser en base a a diferentes estadisticos 
+sns.ecdfplot(data=tips, x='tip', hue='sex', stat='count')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165824010-9f664e86-ff16-4407-9070-8c5bfd4e7e6d.png)
+
+```python
+#Displot se refiere a cualquier tipo de diagrama de distribucion.
+sns.displot(data=tips, x='tip', hue='sex', stat='count')
+plt.show()
+```
+
+![image](https://user-images.githubusercontent.com/60556632/165824055-26dba82e-6e9a-48dc-937f-dfdc3ef41687.png)
 
