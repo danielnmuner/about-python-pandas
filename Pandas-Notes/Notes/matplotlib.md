@@ -9,6 +9,7 @@
   - [x] [Leyendas, etiquetas, títulos, tamaño](#leyendas-,-etiquetas-,-títulos-,-tamaño)
   - [x] [Colores y estilos](#colores-y-estilos)
   - [x] [Bar Plot](#bar-plot)
+  - [x] [Crear otro tipo de gráficas](#crear-otro-tipo-de-gráficas)
 
 
 ### La importancia de la visualización de datos
@@ -335,5 +336,75 @@ plt.barh(country,population)
 plt.show
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165535138-28ef3588-d754-4b63-8294-1006cf284945.png)
+
+### Crear otro tipo de gráficas
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+#Creamos un array a partir de valores aleatorios
+data = np.random.randint(1,50,100)
+data
+```
+```
+array([23, 13, 17, 12, 31,  5, 43, 23, 13, 46, 30, 34, 43, 16, 46, 48, 14,
+       12, 33, 42, 47, 27, 33, 44, 25, 43, 24, 11, 47, 22,  4, 28, 32, 14,
+       43, 15, 21, 15, 31,  4, 27, 36, 49, 19,  4, 41, 40, 27, 24, 35,  6,
+       20,  5, 26, 45, 46, 13,  8, 42,  7, 37, 47,  4, 24, 49, 32, 45, 48,
+       19,  9, 24,  5, 21, 12, 48, 37, 14, 12, 23, 41,  3, 25,  3, 27, 33,
+       40, 45,  5, 48, 20, 35, 38, 16, 15,  5,  7, 30, 11, 22,  4])
+```
+```python
+#Graficar la distribucion de los datos a partir
+#un hisgrama, donde podemos configurar los bins
+
+#histtype='step' tipo linea
+#histtype='bar' tipo barra
+plt.hist(data,bins=10,histtype='step')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165766792-0f448f14-0b18-40cd-8e83-eff80d621a0e.png)
+
+```python
+#Boxplot, indica Rango Intercuartil
+#y los diferente quantiles 0.25 0.50 0.75
+
+#vert=False cambia de vertical a horizontal
+#patch_artist=True agrega color a la caja
+#notch=True enfoca mejor la media de la caja
+#showliers=True, Muestra outlyers con False los saca del diagrama
+
+#Añadimos outlyers a la distribucion:
+data = np.append(data,(100,200,150))
+plt.boxplot(data, vert=False, patch_artist=True, notch=True,showfliers=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165766867-41aa20bf-4999-4f4a-88e6-5767b58d0d02.png)
+
+```python
+#Grafico de dispersion
+#Creamos una varible no importa su valor.
+N = 50
+
+#Definimos los valores de X, Y
+x = np.random.rand(N)
+y = np.random.rand(N)
+
+#Area indica la frecuencia con la que ocurre la relacion X,Y
+area = (30 * np.random.rand(N)) ** 2
+#Color indica la categoria a la que pertenece cada realacion X,Y
+colors = np.random.rand(N)
+
+#Graficamos la relacion y ademas indicamos añadimos mas informacion 
+#indicando:
+#s=area, frecuencia de la relacion
+#c = colors, categoria a la que pertenece la relacion  
+#marker='o', estilo de forma, como poligono, estrella, etc..
+
+plt.scatter(x,y,s=area,c = colors, marker='o')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165766987-840024ce-3095-414c-8b6c-878c7bcfa6bd.png)
 
 
