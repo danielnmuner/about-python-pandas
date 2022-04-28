@@ -14,6 +14,7 @@
 ### Seaborn
   - [x] [Set](#set)
   - [x] [Parámetros más usados con Seaborn](#parámetros-más-usados-con-seaborn)
+  - [x] [Distribuciones](#distribuciones) 
 
 ### La importancia de la visualización de datos
 
@@ -474,5 +475,6 @@ plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165815422-f45e0993-96c8-46d6-aff9-7197768ae66e.png)
 
+### Distribuciones
 
 
