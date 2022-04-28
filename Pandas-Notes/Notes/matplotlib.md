@@ -11,6 +11,8 @@
   - [x] [Bar Plot](#bar-plot)
   - [x] [Crear otro tipo de gráficas](#crear-otro-tipo-de-gráficas)
 
+### Seaborn
+  - [x] [Set](#set)
 
 ### La importancia de la visualización de datos
 
@@ -401,10 +403,39 @@ colors = np.random.rand(N)
 #s=area, frecuencia de la relacion
 #c = colors, categoria a la que pertenece la relacion  
 #marker='o', estilo de forma, como poligono, estrella, etc..
+#alpha = 0.5, le da opacidad al grafico
 
 plt.scatter(x,y,s=area,c = colors, marker='o')
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165766987-840024ce-3095-414c-8b6c-878c7bcfa6bd.png)
+
+### Seaborn
+Seaborn esta construido sobre matplotlib, hay que tener en cuenta que matpotlib esta optimizado para numpy, sin embargo, seaborn esta optimizado para pandas. Cada grafica resuelve diferentes tipos de problemas:
+
+![image](https://user-images.githubusercontent.com/60556632/165772950-1aaa09ac-fb16-4634-b8f9-fece486cd137.png)
+
+### Set
+
+A traves de `set` podemos modificar varios paramentros en cuanto al estilo, tener en cuenta la documentacion: [set_theme](https://seaborn.pydata.org/generated/seaborn.set_theme.html#seaborn.set_theme), [color_palett](https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette)
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.barplot(x=['A','B','C'],y=[1,3,2])
+#plt.show() funciona debido a que es la base de sns 
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165774314-e09948b9-c749-452c-b002-cf039eb08c57.png)
+
+```python
+sns.set(style='darkgrid', palette='muted',font='Verdana', font_scale=1)
+sns.barplot(x=['A','B','C'],y=[1,3,2])
+#plt.show() funciona debido a que es la base de sns 
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165775254-5692687e-2a5a-4a72-b8f5-18b12b718800.png)
+
 
 
