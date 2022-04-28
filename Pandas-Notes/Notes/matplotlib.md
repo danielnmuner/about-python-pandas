@@ -13,6 +13,7 @@
 
 ### Seaborn
   - [x] [Set](#set)
+  - [x] [Parámetros más usados con Seaborn](#parámetros-más-usados-con-seaborn)
 
 ### La importancia de la visualización de datos
 
@@ -436,6 +437,42 @@ sns.barplot(x=['A','B','C'],y=[1,3,2])
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165775254-5692687e-2a5a-4a72-b8f5-18b12b718800.png)
+
+### Parámetros más usados con Seaborn
+Algunos [Data sources](https://github.com/mwaskom/seaborn-data), que podemos usar para experimentar.
+
+```python
+#Importamos Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Cargamos un dataset built-in sns
+tips = sns.load_dataset('tips')
+
+#Veremos displot mas adelante, a continuacion 
+#tenemos un histograma de total_bill
+sns.displot(data=tips, x = 'total_bill')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165815365-8af6180d-73ff-4c6e-9e14-6d64ef4df802.png)
+
+```python
+#Este grafico muestra una relacion entre 'total_bill' y 'tips'
+#automaticamente crea un grafico alterno al histograma
+#usamos el arg 'hue' para categorizar los datos por 'sex'
+sns.displot(data=tips, x='total_bill',y='tip',hue='sex')
+plt.show() 
+
+#Aunque displot seleciona eligio el grafico automaticamente
+#tambien lo podemos hacer a traves de:
+#kind='kde', de densidad
+
+#A nivel de estilo uno de los mas usados son:
+#legend=True
+#palette='dark'
+#alpha=0.25
+```
+![image](https://user-images.githubusercontent.com/60556632/165815422-f45e0993-96c8-46d6-aff9-7197768ae66e.png)
 
 
 
