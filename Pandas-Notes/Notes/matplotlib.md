@@ -17,6 +17,7 @@
   - [x] [Distribuciones](#distribuciones) 
   - [x] [Categóricos](#categóricos)
   - [x] [Archivos de la clase](#archivos-de-la-clase)
+  - [x] [Jointplot y Pairplot](#jointplot-y-pairplot)
 
 ### La importancia de la visualización de datos
 
@@ -696,3 +697,51 @@ sns.relplot(data=tips, x='total_bill',y='tip'
 ```
 
 ![image](https://user-images.githubusercontent.com/60556632/165877962-5484c373-841f-4fee-b84e-4aaa24aa878e.png)
+
+### Jointplot y Pairplot
+
+```python
+#Importamos Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Cargamos un dataset built-in sns como 'tips'
+tips = sns.load_dataset('tips')
+
+#jointplot es un grafico muy util para identificar tanto la 
+#relacion entre variables como el histograma de cada una de ellas
+#algo muy interesante de jointplot este podemos utilizar
+#kind='hist',kind= 'kde', etc
+
+sns.jointplot(data=tips,x='total_bill', y='tip'
+,hue='sex')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165880300-fef730c2-3bf5-4a5d-a73d-b69ae7664bd5.png)
+
+```python
+#Usando las propiedades maginal_ticks=True,
+#margina_kws=dict(bins=25, fill=False,multiple='dodge' podemos
+#modificar el estilo de los graficos marginales sin afectar el 
+#grafico principal y asi agregar mas contexto
+
+sns.jointplot(data=tips,x='total_bill', y='tip', kind='hist'
+,hue='sex',marginal_ticks=True, marginal_kws=dict(fill=False, multiple='dodge'))
+plt.show()
+```
+
+![image](https://user-images.githubusercontent.com/60556632/165880361-4bcedbb3-5542-4946-b440-aaab119bdbc5.png)
+
+```python
+#Pairplot permite visulizar relaciones numericas
+#automaticamente identifica las mismas en nuestro dataset
+
+#La propiedad 'corner=True' solo muestra la mitad de los graficos 
+sns.pairplot(data=tips,hue='sex', kind='hist', palette='coolwarm',)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165880437-e8693caf-0ece-4b58-9531-b92eebbfe2f8.png)
+
+
+
+
