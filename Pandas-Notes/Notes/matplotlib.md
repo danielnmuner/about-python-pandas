@@ -16,6 +16,7 @@
   - [x] [Parámetros más usados con Seaborn](#parámetros-más-usados-con-seaborn)
   - [x] [Distribuciones](#distribuciones) 
   - [x] [Categóricos](#categóricos)
+  - [x] [Archivos de la clase](#archivos-de-la-clase)
 
 ### La importancia de la visualización de datos
 
@@ -636,3 +637,62 @@ sns.catplot(data=tips,x='day',y='total_bill',hue='sex',
             dodge=True,kind='box',col='time')
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165873531-544c4f24-9a48-4e69-bfc9-a2e29766a02d.png)
+
+### Archivos de la clase
+
+```python
+#Graficos de relacion entre variables como scatterplot
+
+#Importamos Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Cargamos un dataset built-in sns como 'tips'
+tips = sns.load_dataset('tips')
+
+#scatterplot permite ver si eziste alguna asociacion entre variables
+#con style, podemos agregar otra categoria ademas de hue
+#size='size',podemos agregar otra categoria ademas de hue 
+sns.scatterplot(data=tips, x='total_bill',y='tip'
+, hue='sex',style='time',size='size')
+
+#Usando legend posicionamos la legenda
+plt.legend(loc='center', bbox_to_anchor=(1.15,0.5))
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165877825-520a52e6-8116-4ad2-9472-d18fd7806010.png)\
+
+```python
+#Crear un dicionario para la propiedad marker
+#donde queremos que la categoria time tenga diferentes
+#estilos de forma:
+
+markers={'Lunch':'p','Dinner':'>'}
+
+plt.figure(figsize=(7,5))
+sns.scatterplot(data=tips, x='total_bill',y='tip'
+, hue='day',style='time',size='size',markers=markers)
+
+plt.legend(loc='center', bbox_to_anchor=(1.15,0.5))
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165877849-63090b7b-b655-4265-aa66-a1a3ae9c1d08.png)
+
+```python
+#Lineplot es como un scatterplot pero unido con lineas
+#como podemos ver es preferible el scatterplot
+plt.figure(figsize=(7,5))
+sns.lineplot(data=tips, x='total_bill',y='tip'
+, hue='day',style='time',size='size',markers=markers)
+```
+![image](https://user-images.githubusercontent.com/60556632/165877913-d0ebbe6d-6a6f-40a5-a090-7392eade6804.png)
+
+```python
+#Relational plot es una opcion universal como displot. 😊👽
+#solo cambiando kind='scatter', kind='line', etc..
+plt.figure(figsize=(7,5))
+sns.relplot(data=tips, x='total_bill',y='tip'
+, hue='day',style='time',size='size',markers=markers, col='time')
+```
+
+![image](https://user-images.githubusercontent.com/60556632/165877962-5484c373-841f-4fee-b84e-4aaa24aa878e.png)
