@@ -15,6 +15,7 @@
   - [x] [Set](#set)
   - [x] [Parámetros más usados con Seaborn](#parámetros-más-usados-con-seaborn)
   - [x] [Distribuciones](#distribuciones) 
+  - [x] [Categóricos](#categóricos)
 
 ### La importancia de la visualización de datos
 
@@ -544,3 +545,94 @@ plt.show()
 
 ![image](https://user-images.githubusercontent.com/60556632/165824055-26dba82e-6e9a-48dc-937f-dfdc3ef41687.png)
 
+### Categóricos
+
+```python
+#Graficos de variables categoricas
+#Importamos Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Cargamos un dataset built-in sns como 'tips'
+tips = sns.load_dataset('tips')
+#countplot es practicamente un hisplot/displot con 
+#multiple='dodge' o dodge=True
+
+sns.countplot(data=tips,x='day',hue='sex')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165873358-00b2c0f8-3ea7-4eff-af1b-25aeabf539ae.png)
+
+```python
+#stripplot requiere al menos:
+#x, una variable categorica
+#y, una distribucion numerica
+#hue, otra variable categorica
+#dodge, permite separar hue para que sea mas claro
+sns.stripplot(data=tips,x='day',y='total_bill',hue='sex', dodge=True)
+plt.show()
+
+#En esta grafica vemos las distribucion de una variable numerica 
+#respecto a una categorica como los dias
+```
+![image](https://user-images.githubusercontent.com/60556632/165873372-e488ff13-c43b-4081-819b-209566964206.png)
+
+```python
+#swarmplot es como stripplot solo que se ve mas claro la
+#consentracion, incluso tiene las mismas propiedades
+sns.swarmplot(data=tips,x='day',y='total_bill',hue='sex', dodge=True)
+plt.show()
+```
+
+![image](https://user-images.githubusercontent.com/60556632/165873401-7f09f068-cc4d-41a4-881b-6d7418865e72.png)
+
+```python
+#El boxplot indica la distribucion numerica por cuantiles
+#podemos colocar dos grupos categoricos como se muestra:
+sns.boxplot(data=tips,x='day',y='total_bill',hue='sex', dodge=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165873422-af124872-e330-4e7c-8292-447e0ffe80ca.png)
+
+```python
+#En este grafico se sobreponen un swarmplot y un boxplot
+#lo cual es interesante para relacionar cuantiles y consetracion.
+
+plt.figure(figsize=(8,6))
+
+sns.swarmplot(data=tips,x='day',y='total_bill',hue='sex', 
+dodge=True,color='k', marker='>')
+
+sns.boxplot(data=tips,x='day',y='total_bill',hue='sex', dodge=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165873449-94a62b83-694e-440c-8e80-430d18e85266.png)
+
+```python
+#El violin es similar al boxplot, pero en vez de cuantiles, indica
+#la consentracion de los datos es como swarmplot pero delineado .
+sns.violinplot(data=tips,x='day',y='total_bill',hue='sex', dodge=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165873481-8c7aa045-7b48-4e87-bb58-cd052adac6da.png)
+
+
+```python
+#La propiedad 'split' permite contrarestar la distribucion 
+#de los datos a nivel de consentracion entre nuestra 
+#variable categorica 'sex'
+
+sns.violinplot(data=tips,x='day',y='total_bill'
+,hue='sex',dodge=True,split=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/165873501-3fc423e2-1a60-48fd-a838-33550fa67dc6.png)
+```python
+#Categorical plot es una opcion universal como displot. 😊👽
+#solo cambiando kind='box', kind='violin', etc..
+#col, es una propiedad de catplot que nos permite dividir la grafica en dos
+#graficas de forma categorica. 
+sns.catplot(data=tips,x='day',y='total_bill',hue='sex',
+            dodge=True,kind='box',col='time')
+```
+![image](https://user-images.githubusercontent.com/60556632/165873531-544c4f24-9a48-4e69-bfc9-a2e29766a02d.png)
