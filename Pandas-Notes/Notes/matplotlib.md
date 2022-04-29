@@ -18,6 +18,7 @@
   - [x] [Categóricos](#categóricos)
   - [x] [Archivos de la clase](#archivos-de-la-clase)
   - [x] [Jointplot y Pairplot](#jointplot-y-pairplot)
+  - [x] [Heatmap](#heatmap)
 
 ### La importancia de la visualización de datos
 
@@ -741,6 +742,46 @@ sns.pairplot(data=tips,hue='sex', kind='hist', palette='coolwarm',)
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/60556632/165880437-e8693caf-0ece-4b58-9531-b92eebbfe2f8.png)
+
+### Heatmap
+
+Mapas de colores que podemos trabajar con seaborn, [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html)
+
+```python
+#Heatmap, es util al graficar datos en una estructura matricial.
+
+#Importamos Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Cargamos un dataset built-in sns como 'tips'
+tips = sns.load_dataset('tips')
+
+#A pertir de corr() optenemos la correlacion 
+#entre los valores numericos de tips asi tenemos un tipo de matriz
+tips.corr()
+```
+![image](https://user-images.githubusercontent.com/60556632/166060278-76cb4c5d-a4b0-426d-91ec-be9abb6010bf.png)
+
+
+```python
+#Visualmente heatmap puede ser muy util para ver la correlacion 
+#entre variables
+
+#annot=True, indica el valor numerico de la correlacion
+#cmap='coolwarm', color map, opciones de colores
+#linewidth=5, lineas intermedias
+#linecolor='black', cambia el color de las lineas intermedias 
+#vmin=0,vmax=1, modifica la escala de los valores
+#cbar=True, Valor default para mostrar la barra de escala
+
+sns.heatmap(tips.corr(),annot=True,cmap='coolwarm',
+            linewidth=5,linecolor='black',vmin=0.5,vmax=1,cbar=True)
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/60556632/166060863-190ca7e1-feaa-41ec-be6d-50e0c650212c.png)
+
+
 
 
 
