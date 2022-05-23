@@ -1,4 +1,4 @@
-## Creacion de Portafolio y CV
+# Creacion de Portafolio y CV
 > Carolina Gayosso
 
 ### ¿Por qué necesito un portafolio creativo y un CV de impacto?
@@ -87,3 +87,119 @@ Colocamos el nombre de la Empresa,Periodo, cargo y actividades realcionadas como
 - ¿Como es que aprendiste a usar cierta herramienta?
 - Recuerda que el entrevistador va a evaluar competencias profesionales (conocimientos, experiencia que tienes, habilidades, actitud y valores).
 - En el momento de tu entrevista deberás resaltar tu actitud y valores.
+
+# Optimizacion de perfil en Linkedin
+
+**Informacion relevante**
+
+- 70% de los empleadores usan las redes sociales como filtro para los candidatos.
+- 57% de los empleadores no aceptaron candidatos a entrevista si no pudieron encontrar información online acerca del candidato en cuestión.
+- `Acciones correctivas:`
+  - Elimina el contenido controversial.
+  - Cambia tu configuración de privacidad.
+  - Desetiquétate de publicaciones no deseadas.
+- `Cura tus redes sociales`
+  - Actúa como una marca.
+  - Participa en eventos relacionados con tus intereses.
+  - Haz voluntariado.
+  - Comenta en LinkedIn.
+  - Crea una web personal.
+  - Solo tenemos 20 segundos para convencer
+- `Define tu objetivo profesional`
+  - Área laboral Espacio para imagen
+  - Geografía
+  - Industria
+  - Tipo de organizaciones: ONG, Privadas, Publicas, Startups
+  - Tipo de empleo: Jornada Completa
+- `Formas de identificar tus palabras clave`
+![image](https://user-images.githubusercontent.com/60556632/169895728-f874ecda-5b5f-4dd4-b6a1-485184d3d91f.png)
+- Jobscan
+- `“Tu marca personal es lo que dice la gente de ti cuando no estás en la sala”`
+- `Marca personal en LinkedIn`
+![image](https://user-images.githubusercontent.com/60556632/169896275-1476909a-27dc-4cb8-88f2-c883ec0ff4f4.png)
+
+# Triunfar en Entrevistas de Trabajo
+### ¿Qué son las competencias profesionales?
+
+¿Qué son las competencias profesionales?
+
+1. Evaluar cada una y **practicarlas** mucho! asi tendremos mas confianza.🙃
+
+- **Conocimientos**: Es todo lo que sabes; lo que aprendiste en la escuela, lo que aprendiste de manera autodidacta. Verifícalos y compáralos con los conocimientos que se están pidiendo.
+- **Experiencia**: Lo que has aprendido poniendo en practica lo que sabes, puede ser de los trabajos pasados, o algo que hayas hecho de manera independiente. Todo lo que este relacionado con la vacante a la que te estas postulando.
+- **Habilidades**: Le permiten destacar como profesional y demostrar tus conocimientos específicos. Es decir, para que eres bueno en algo sin tener que practicar mucho.
+- **Valores**: Los principios universales por los que se rige una persona, los que traes de casa o de familia.
+- **Actitud**: Es el comportamiento o la forma de ser ante una situación, ¿cómo afrontamos las situaciones? Puede ser de manera positiva o negativa.
+
+### ¿Cómo contestar en una entrevista por competencias?
+Las entrevistas por competencias a veces se realizan preguntando en pasado como si ya hubiecemos resuelto un problema cuando en realidad es una situacion hipotetica. El objetivo es evaluar una habilidad o cualidad especifica. **Siempre se responde de manera positiva** aunque la pregunta tenga la intencion de que demos una respuesta negativa.
+
+![image](https://user-images.githubusercontent.com/60556632/169900712-3952c87f-2484-4c31-bee3-bf776c7df45b.png)
+![image](https://user-images.githubusercontent.com/60556632/169900779-bc008c00-fc8f-46b2-94fc-7157f372f604.png)
+
+### Metas y objetivos
+Los objetivos son los pasos medibles para llegar a una meta u objetivo General alcanzable. 
+En las siguientes preguntas debemos relacionar objetivos con metas al igual que enfocar nuestras respuestas al ambito profesional. 
+
+- ¿Cuales son tus planes a corto plazo?(Se refieren a los objetivos)
+- ¿Como te vez en 5 años?(Se refiere a la meta)
+
+### Habilidades Blandas para iniciar la vida laboral
+
+- **Creatividad**- Para solucionar problemas debes ser creativo, ya que habrá ocasiones en las que no tengas un proceso o protocolo que seguir, así que haz gala de tu creatividad para resolver problemas y aportar soluciones, mejores formas de hacer o crear algo.
+
+- **Adaptabilidad**- Estamos en un mundo de constantes cambios, nuevas tecnologías, nuevas versiones de esas tecnologías, software, etc… Y en las relaciones interpersonales puedes enfrentar cambios de jefes, proyectos, lugar de trabajo, etc… Adaptarse a ello y no solo aceptarlo te ayudará a no arrastrar con el pasado y darle cabida a lo nuevo.
+- **Flexibilidad**- Todos queremos trabajar con colaboradores flexibles que ante una situación piense en el ¡Cómo si! Contemplando solo lo que se tiene a la mano. Es decir, enfocarse en lo que se tiene que hacer para llegar a la solución o cumplir con el objetivo.
+- **Colaboración o trabajo en equipo**- Formarás parte de un equipo de trabajo, que a su vez tendrá relación con otras áreas de trabajo, así que para aumentar tus destrezas en esta habilidad te recomiendo que comiences a aprender sobre comunicación efectiva.
+- **Autodidacta**- De verdad estar en constante aprendizaje, se decía antes que esto solo era para profesiones como médicos o científicos, pero hoy en día todas las profesiones se complementan y evolucionan.
+
+#### Cuando tienes personas a cargo:
+
+- **Gestión de equipos de trabajo**- Esta puede ser una habilidad blanda y dura porque requiere de escucha activa, empatía y buena comunicación, pero también hay diferentes metodologías que te pueden ayudar con esta tarea como la metodología Belbin o Management 3.0
+- **Pensamiento crítico**- Para ti mismo y con tus colaboradores, esto te ayudará en enfocarte y no perder el objetivo que es dar resultados y evaluar cómo puedes mejorar algo.
+-Manejo del tiempo- Para definir prioridades y dar tiempos de entrega, esto te evitará muchos dolores de cabeza.
+- **Comunicación efectiva-**- Cada vez se vuelve más importante esta habilidad, ya que siempre estaremos comunicando nuestras ideas, resultados, propuestas, etc.…es importante utilizar las palabras correctas con el público indicado.
+
+#### A cargo de un área:
+
+-**Liderazgo**- Hay diferentes estilos de liderazgo, pero uno de lo que considero con más éxito actualmente, es el Liderazgo participativo y democrático, este líder toma en cuenta la opinión de su equipo, escucha opiniones e ideas, pero sabe que es el responsable de la decisión final. El escuchar otros puntos de vista te genera lealtad y compromiso de tu equipo.
+- **Visión estratégica**- En este punto ya es importante que veas más allá, es decir; que estés pendiente de los aspectos que puedan impactar tu área, tu negocio, tu empresa, tu país; desfavorable y favorablemente para prever buenas oportunidades o posibles crisis.
+- **Juicio y toma de decisiones**- Considerar los costes y beneficios relativos de las acciones potenciales para elegir la más apropiada.
+- **Negociación**- Una vez que has logrado comunicar con éxito ahora necesitarás persuadir y lograr acuerdos.
+- **Flexibilidad cognitiva**- Es el siguiente nivel de la flexibilidad, es la capacidad de generar o utilizar diferentes conjuntos de reglas para combinar o agrupar cosas de diferentes maneras.
+- **Inteligencia emocional**- Conciencia de uno mismo y auto regulación son las palabras clave de esta habilidad. Las necesitarás cuando tengas grandes responsabilidades y toma de decisiones constantes, desarrollar la inteligencia emocional te ayudará a disminuir el estrés y gestionar tus emociones de la mejor manera.
+
+- **Ojo**: Lo que acabo de presentarte, no es la definición de cada habilidad; si quieres leer a detalle cada definición (te lo recomiendo), puedes hacerlo en el siguiente enlace: Diccionario de Competencias o buscar cada una en internet. Sobre las habilidades duras que son las técnicas van de acuerdo a tu profesión, estás son particulares según tus actividades. Te recomiendo hacer un análisis de las que podrías aprender para mejorar tu perfil profesional y hacer mejor tu trabajo actual, seguro en el catálogo de Platzi encontrarás lo que necesitas.
+
+### Consideraciones al responder preguntas de la entrevista
+- Es importante llevar un control de las empresas que nos llaman las fechas y las personas que se tomaron el tiempo de llamarnos. 
+- Ser puntual y tener claro el perfil de la vacante al igual que informacion basica de la empresa.
+- Ir con ropa comoda y ser muy natural con nuestro lenguaje no verbal.
+- Colocar al final del CV aquella informacion que puede ser dificil de responder.
+- **Enfocarnos en dar una respuesta concreta** Es casi contrareloj.
+- **Da un enfoque positivo a tu respuesta**
+- **Que las respuestas sean de lo profesional**
+
+### Planes a corto plazo y ¿Cómo te ves en 5 años?
+Son preguntas casi obligadas por lo cual debemos estar seguro que estas respuestas estan coordinadas. No importa si realmente son mas de 5 años lo importante es que nos refiramos a lo mas alto que queremos llegar. 
+
+¿Cómo te ves en 5 años?
+- Me veo dirigiendo un equipo de desarrolladores no necesariamente en mi pais.
+¿Planes a corto plazo?
+- Necesito capacitarme en programas avanzado de inteligencia artificial y machine learning al igual que conocer un poco mas de otros servicios en la nube especificamente combinar IOT con AI.
+
+### ¿Cuáles son tus fortalezas y debilidades?
+Si no praticamos estas repuestas seguramente no saldran como nos gustaria. Solo si el reclutador especificamente se refiere a la parte personal.
+
+**Fortalezas Profesionales**
+- ¿Que te ha distinguido en tu trabajo?(Compromiso, responsabilidad, tolerancia a la frustracion).
+- De acuerdo a tu experiencia o conocimiento actual, ¿Que es relevante para la vacante?(Nos basamos en las palabras claves, 3 son sufucientes).
+
+**Debilidades Profesionales**
+- ¿Que te falta en conocimiento o experiencia con los requisitos de la vacante?(Areas de oportinudad respecto a la vacante)
+
+
+
+**Debilidades**
+- 
+
