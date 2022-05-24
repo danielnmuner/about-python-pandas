@@ -1,5 +1,12 @@
 # Creacion de Portafolio y CV
 > Carolina Gayosso
+# Data Analyst
+Bolsas de Empleo Habi
+[Greenhouse](https://boards.greenhouse.io/habi/jobs/4410522004?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic)
+[Starup Jobs](https://startup.jobs/data-analyst-habi-3138270?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic)
+[ParallelJobs](https://paralleldesk.com/job-details/data-analyst-bbd4mlerbta?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic)
+[JobGnu](https://colombia.jobgnu.com/jobs/13720?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic)
+
 
 ### ¿Por qué necesito un portafolio creativo y un CV de impacto?
 
@@ -198,8 +205,70 @@ Si no praticamos estas repuestas seguramente no saldran como nos gustaria. Solo 
 **Debilidades Profesionales**
 - ¿Que te falta en conocimiento o experiencia con los requisitos de la vacante?(Areas de oportinudad respecto a la vacante)
 
+### Preguntas abiertas: ¿Quién eres tu? ¿Por qué debemos contratarte?, en cada pregunta nos debemos vender como profesionales.
+El perfil de la vacante es nuestro soporte, si por ejemplo no tenemos experiencia o conocimiento de una herramienta tenemos que investigar al menos que de que se trata y que usos tiene. Googlear todo lo que no sepamos dentro del perfil requerido por la vacante. 
 
+¿Quién eres tu?(Siempre pensar a nivel profesional)
+  - ¿Que aspiramos a nivel profesional?¿Que nos gusta a nivel profesional?
+¿Por qué debemos contratarte?
+  - Por que soy un candidato dispuesto a comprometerse con las actividades que requiere ya que tengo experiencia o conocimiento en...
 
-**Debilidades**
-- 
+### Preguntas trampa y preguntas específicas según el puesto o sector
+Normalmente se buscan evaluar nuestra actitud y reacciones.
+
+- ¿Que es lo peor que podemos esperar de ti si te contratamos?(No relamente no habria nada, siempre he colaborado de manera activa, siempre la conotacion positiva).
+- ¿Por que no debemos contratarte?(Si consideras que hay un perfil que hay un perfil mejor que el mio).
+- ¿A que te gustaba jugar cuando eras niño?(Busca saber si las personas tienen la pasion de la vacante desde niños).
+- ¿Cuales son tus hobbies?(Los evaluan para conocer la creatividad de las personas, o que los hobbies sean a fines a los del equipo)
+
+### Cómo comunicar tus logros laborales de manera asertiva?
+Ser muy concretos debido a que el reclutador no necesariamente esta interesado en enterder o conocer los detalles a profundidad. 
+
+- Objetivos cumplidos y concretos
+- Porcentajes, costos o procesos mejorados no debemos divagar.
+- Estan relacionado con haber superado las espectaivas del perfil en el que estabamos
+
+### La primera impresión como candidato, tu CV y tu foto en redes sociales laborales
+
+La primera impresion es nuestro CV y debemos tener dentro de nuestras opciones un PDF. El nombre del archivo debe ser `cv_nombre_vacante` tambien llevarlo impreso a `color` en una hoja tipo opalina o gruesa y en una carpeta muy pulcro todo.
+
+En linkedin hay una opcion para enviar mensajes personalizados y por este canal podemos contarle a los reclutadores que estamos en busqueda de trabajo y que si acepta podemos compartirle nuestro CV. 
+
+En linkedin debemos matenernos activos con frases inspiradores, infografias profesionales, noticias, siempre hagamos comentarios con una conotacion positiva. 
+
+### ¿Qué preguntas debes hacer en el primer contacto?
+Cuando ya hayamos terminado la entrevista podemos preguntar al entrevistador ¿Como sera el proceso de seleccion?¿Cuanto dura el proceso?¿Detalle de Actividades?¿Lugar de trabajo?¿Cual es el salario que se ofrece?. Asi podremos podriamos hacer un mejor on boarding.
+
+### Aspectos de la vacante y de la empresa que debes revisar antes de la entrevista
+
+- Pagina web, Mision, vision, valores, clientes y servicios
+- Facebook(Interaccion), Instagram(Cualtura), Linkedin(Noticias) en general googlea la empresa.
+
+**Tener Cuidado con entrevistas de empresas fraude**
+- La empresa no tiene pagina web
+- El correo no es corporativo
+- No hay presencia en internet.
+- Cuidado con los grupos de facebook .
+
+### Sobre tus pretensiones económicas
+- Revisa el rago de sueldo de vacantes similares(Bolsas de empleo, foros LinkedIn).
+- Si debemos cambiar de ubicacion hay que tener claro los gastos adicionales. Calcula tus gastos mensuales.
+- Al mensionar la espectativa salarial poder explicar porque se considera esa cantidad.
+
+### Otras preguntas y cierre de la entrevista
+- Sueldo o rango
+- Prestaciones y/o beneficios
+- Forma de contratacion
+- Plan de crecimiento
+- Si hay capacitaciones
+- Siempre mostramos interes hacer de la continuidad del proceso, despidete de mano. Mostrar de disposicion para continuar. 
+
+Durante el proceso de reclutamiento, hay muchos factores que intervienen para llegar a la selección del candidato ideal para un puesto de trabajo. Es importante analizar objetivamente y diferenciar entre los factores externos e internos para que puedas trabajar en lo que está en tus manos y no te enganches de lo que no.
+
+[factores](https://static.platzi.com/media/user_upload/Screen%20Shot%202020-01-07%20at%2012.02.41%20PM-192bc41b-9328-42fd-aa0c-c610ee31d047.jpg)
+
+### Estrategias si buscas tu primer empleo
+- Envia invitaciones por LinkedIn a los reclutadores de las emresan que te interesan.
+- Acude a evento de comunidades, foros a temas relacionados con mi profesion
+- Muestra tu mejor actitus y habilida para aprender rapido.
 
