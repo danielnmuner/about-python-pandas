@@ -291,3 +291,53 @@ run;
 ![image](https://user-images.githubusercontent.com/60556632/171213744-b3940a27-db5c-4973-af89-9f82e60fc1ee.png)
 
 - **Proc Tabulate**
+Sirve para cruzar variables categoricas y evaluar diferentes paramentros.
+- `Class` Columns and `Table` Columns
+```sas
+/*Por defecto el estadistico es N*/
+proc tabulate data=sashelp.baseball;
+	class Division;
+	table Division;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171215805-85b43b72-558d-45b4-b3ba-01b0f988514c.png)
+
+- `Class` Rows,Columns and `Table` Rows,Columns
+```sas
+proc tabulate data=sashelp.baseball;
+/*Indicamos Rows and Columsn
+No olvidar `,` en tables*/
+	class Division League;
+	table Division, League;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171216571-faedb756-7742-4f12-b7f2-38bcfcb3cd34.png)
+- `Class` Page,Rows,Columns and `Table` Page,Rows,Columns
+```sas
+proc tabulate data=sashelp.baseball;
+/*Indicamos Page, Rows and Columsn
+No olvidar `,` en tables
+Page es el cantida de tablas data una categoria
+en este caso division solo tiene 2 categorias*/
+	class Division League Team;
+	table Division, League, Team;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171217411-00e35ef3-104c-458b-a345-76d4c9d710ab.png)
+
+- Otros estadistico que pueden ser usados en el ejemplo anterior.
+![image](https://user-images.githubusercontent.com/60556632/171218172-c3a9808d-f513-488f-8d27-8c0557599900.png)   
+
+A continuacion se muestra como se pueden agregar estos estadisticos.
+
+```sas
+proc tabulate data=sashelp.baseball;
+	class Division League;
+	var nOuts;
+/*Agrega ALL: Subtotales
+MEAN: La media de nOuts pero ademas la media de los subtotales de League
+Importante si table no tiene `,` no se van a separa por filas y columnas*/
+	table Division ALL, MEAN*nOuts*(League ALL);
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171219483-e1f27ceb-4a69-4009-9cf5-43dad56b6021.png)
