@@ -341,3 +341,38 @@ Importante si table no tiene `,` no se van a separa por filas y columnas*/
 run;
 ```
 ![image](https://user-images.githubusercontent.com/60556632/171219483-e1f27ceb-4a69-4009-9cf5-43dad56b6021.png)
+
+- **Proc [Report](https://support.sas.com/resources/papers/proceedings/proceedings/sugi30/259-30.pdf)**
+- Ordenar Ascendentemente
+```sas
+proc report data=sashelp.baseball;
+/*Utiliza la Columna CrHits para ordenar toda la table ascendentemente*/
+	define CrHits / Order 'Career Hits Order';
+run;
+```
+- Agrupar tablas acotadas
+```sas
+proc report data=sashelp.baseball MISSING;
+/*Indica las columnas que queremos tomar a traves de column*/
+	column League Salary;
+/*Agrupa Salary en funcion de League una variable categorica
+y suma el total de salario para cada grupo de League*/
+	define League / GROUP;
+run;
+```
+- Agupar tablas acotadas e indicar el estaditico
+```sas
+/*MISSING indica que tendremos en cuenta los valores nulos*/
+proc report data=sashelp.baseball MISSING;
+/*Indica las columnas que queremos tomar a traves de column*/
+	column League Salary;
+/*Agrupa Salary en funcion de League una variable categorica
+y suma el total de salario para cada grupo de League*/
+	define League / GROUP;
+/*Si queremos indicar otro estadistico diferente a `Sum` entonces 
+debemos definir la variable numerica para un estadistico dado*/
+	define Salary / Analysis Mean;
+/*Ahora es stat sera Mean en vez de Sum*/
+run;
+```
+
