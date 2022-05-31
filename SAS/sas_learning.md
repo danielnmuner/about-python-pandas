@@ -50,7 +50,7 @@ run;
 ```
 
 **Datalines**
-```sh
+```sas
 data demografic_cols;
 /*Ademas de $ para indicar que es tipo caracter podemos usar 1-5 rangos para
 indicar los espacios que pueden ocupar los datos de las filas es como
@@ -66,6 +66,36 @@ run;
 proc print data=demografic_cols;
 run;
 ```
+- **Datalines Archivos separados por espacios**
+```sas
+data demografic_cols;
+/*Donde infile recibe la ruta del archivo no delimitado por ; sino por espacios*/
+	infile 'path/file.txt';
+/*+1 salta una colmna e inicia a partir de la siguiente
+@18 Indica que iniciara en la columna 18*/
+	input Gender $ 1-2 Index +1 Age $ 5-6 Ethnicity $ @18;
+run;
+
+proc print data=demografic_cols;
+run;
+```
+
+- **Datalines en Fechas**
+```sas
+data date_sample;
+/*El 10. indica el total de caracteres incluyendo `-`
+si no usamos format obtendremos el valor numerico de la fecha*/
+	format Date_Birth MMDDYY10.;
+	input Name $ Date_Birth MMDDYY10.;
+	Datalines;
+Oliver 03-16-1972
+Natalie 12-11-1965
+;
+run;
+proc print data=date_sample;
+run;
+```
+
 
 
 
