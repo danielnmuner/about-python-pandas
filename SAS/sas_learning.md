@@ -269,3 +269,25 @@ Asi ahora tenemos una nueva columna New_Air con el mismo valor de AIR pero categ
 	New_Air = put(AIR, $4.);
 run;
 ```
+
+- **Proc Format**
+Esta opcion permite reemplazar valores en nuestro dataset.
+```sas
+proc format;
+/*Creamos una variable gender y agegrp internamente 
+cada una almacena un formato que luego sera asignado a determinada tabla
+LOW y HIGH son variable internas de SAS*/
+	VALUE $gender 'M' = 'Male'
+				  'F' = 'Female';
+	VALUE agegrp  LOW - 13 = 'Youth Teen'
+				  14 - HIGH = 'Mid Teen';
+run;
+
+proc print data=sashelp.class;
+/*Asignamos ageqpr a age y $gender a sex*/
+	format age agegrp. sex $gender.;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171213744-b3940a27-db5c-4973-af89-9f82e60fc1ee.png)
+
+- **Proc Tabulate**
