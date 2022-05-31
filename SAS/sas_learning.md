@@ -217,5 +217,30 @@ filtrando los datos diferentes a Houston*/
 	Title 'All outs Except Houston';
 run;
 ```
+- **Uso de [Table](https://documentation.sas.com/doc/en/pgmsascdc/v_010/procstat/procstat_freq_overview.htm)**
+Muestra la lista de variables que queremos ver. A continuacion generacion de Tabla de Frecuencias
+```sas
+proc freq data=sashelp.baseball;
+/*Creamos dos tablas de frecuencias
+Una para Position y Otra para League*/
+	tables Position League;	
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171206660-df790ae5-ab84-454a-84b5-a65b19048a94.png)
+![image](https://user-images.githubusercontent.com/60556632/171206800-17dee8fe-7c42-44e7-9c7b-6885b573c5bd.png)   
 
-
+En caso de querer mover o sacar alguna de las columnas de la tabla de frecuencias solo lo podemos hacer para una tabla de freq no para dos como en el caso anterior.
+```sas
+proc freq data=sashelp.baseball;
+/*Mover la columna de valores acumulados*/
+	tables Position/NOCUM;	
+run;
+```
+- **Tabulacion de frecuencias transversal a variables categoricas.
+```sas
+proc freq data=sashelp.baseball;
+/*Tabulacion transversal a dos variable categoricas*/
+	tables Position * League;	
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171208280-411715b2-4aeb-4fc1-9ab6-af5259b70c3f.png)
