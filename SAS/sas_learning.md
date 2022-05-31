@@ -119,7 +119,15 @@ run;
 proc print data=bweight_kg;
 run;
 ```
-
+- **Crecion de una Libreria**
+```sas
+/*Creacion de una libreria de nombre 'mydata'
+donde la libreria es una instancia de una
+de carperta en esta caso 'bpo2b'*/
+libname mydata '/home/u61609774/bpo2b';
+run;
+```
+ 
 
 
 
