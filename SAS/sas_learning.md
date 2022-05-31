@@ -44,11 +44,26 @@ data airline_create;
 /*Creamos la columna Month la cual es igual al mes de la columna date*/
     Month = month(date);
 run;
-``` 
-    - `proc step` _Procesa Datos_
-```sas
 /*Procedure step que imprime data que es igual a airline create*/
 proc print data=airline_create;
+run;
+```
+
+**Datalines**
+```sh
+data demografic_cols;
+/*Ademas de $ para indicar que es tipo caracter podemos usar 1-5 rangos para
+indicar los espacios que pueden ocupar los datos de las filas es como
+un limitante de carateres y numeros, es util cuando tenemos archivos de
+texto alineados pero sin limitadores como ; o ,*/
+	input Name $ 1-5 Age 6-8 State $ 9-11 Weight 12-15;
+	datalines;
+Marie 25 WV 132
+Danie 188 ST 188
+;
+run;
+
+proc print data=demografic_cols;
 run;
 ```
 
