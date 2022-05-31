@@ -128,7 +128,55 @@ libname mydata '/home/u61609774/bpo2b';
 run;
 ```
  
+- **[Proc Means](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p0f0fjpjeuco4gn1ri963f683mi4.htm)**
+Provee estadistica basica para varibles numericas. Si ejecutamos este codigo obtenemos la siguiente tabla.
 
+```sas
+/*Proc means*/
+data baseball_data;
+	set sashelp.baseball;
+run;
+
+proc print data=baseball_data;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171197100-e4e2b273-dacf-4bbd-bf7b-a3c4271d99df.png)
+Si queremos calcular los estadisticos de `nHits` y `nRuns` podemos usar el siguiente codigo:
+
+```sas
+/*Proc means*/
+data baseball_data;
+	set sashelp.baseball;
+run;
+
+proc means data=baseball_data;
+/*Indicamos las variables a calcular sus estadisticos*/
+	var nHits nRuns;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171197810-85789cda-1461-4450-a21f-8a8c2dc929ee.png)
+
+A continuacion especificamos que estadisticos necesitamos e incluso crear un nuevo archivo de salida con `output out`
+```sas
+/*Proc means*/
+data baseball_data;
+	set sashelp.baseball;
+run;
+
+/*Indicamos algunos estadisticos
+q1: es el quantil minimo
+maxdec: Decimales maximos
+nmiss: total nulos
+n: total datos
+mean: media
+median: mediana
+*/
+proc means data=baseball_data median q1 maxdec=2 nmiss n mean;
+	var nHits nRuns;
+/*output out: Crea un nuevo archivo 'baseball_stats' */
+	output out = baseball_stats;
+run;
+```
 
 
 
