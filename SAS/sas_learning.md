@@ -177,6 +177,45 @@ proc means data=baseball_data median q1 maxdec=2 nmiss n mean;
 	output out = baseball_stats;
 run;
 ```
+A continuacion usamos `Class` el cual es funciona como un groupby donde podemos calcular estadisticos a partir de la agrupacion de datos categoricos.
+```sas
+/*Proc means*/
+data baseball_data;
+	set sashelp.baseball;
+run;
 
+proc means data=baseball_data;
+/*Calculamos stats a partir de la agurpacion por `League`*/
+	class League;
+	var nHits nRuns;
+run;
+```
+![image](https://user-images.githubusercontent.com/60556632/171201706-da1e6ed9-3945-4cc5-a382-feb0e529d4c5.png)
+
+Una alternativa a `class` es `by` sin embargo primero debemos hacer un `sort` como se muestra acontinuacion
+```sas
+/*Realizamos un sort de League*/
+proc sort data=baseball_data out=baseball_sorted;
+	by League;
+run;
+
+/*Ahora si podemos aplicar un by. Al final es lo mismo que class
+pero class es mas facil y claro*/
+proc means data=baseball_sorted;
+	by League;
+	var nHits nRuns;
+run;
+```
+- **Uso de Where**
+```sas
+proc means data=sashelp.baseball;
+/*Basic stats de la variable nOuts
+filtrando los datos diferentes a Houston*/
+	var nOuts;
+	where team not = 'Houston';
+/*Nombre de la tabla*/
+	Title 'All outs Except Houston';
+run;
+```
 
 
