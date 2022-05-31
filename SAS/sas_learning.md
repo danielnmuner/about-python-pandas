@@ -244,3 +244,28 @@ proc freq data=sashelp.baseball;
 run;
 ```
 ![image](https://user-images.githubusercontent.com/60556632/171208280-411715b2-4aeb-4fc1-9ab6-af5259b70c3f.png)
+
+- **Formats**
+A continuacion daremos formato a la columna date donde pasaremos de `JAN49` a `DD-MM-YYYY` format.
+```sas
+data airline_data;
+/*El numero 10. sirve para indicar el total de carateres
+y DATE es el nombre de la columna*/
+	format DATE MMDDYY10.;
+	set sashelp.airline;
+run;
+```    
+
+A continuacion podemos ver como convertir una variable numerica en una categorica o viceversa.
+```sas
+data airline_data;
+	set sashelp.airline;
+/*put(column_name,format) es importante recordar que los numeros normalemte
+estan identados a la derecha y los caracteres a la izquierda.
+$: Indica que es de tipo caracter
+4:El numero de carateres
+
+Asi ahora tenemos una nueva columna New_Air con el mismo valor de AIR pero categorico*/
+	New_Air = put(AIR, $4.);
+run;
+```
