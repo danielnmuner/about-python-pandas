@@ -375,4 +375,42 @@ debemos definir la variable numerica para un estadistico dado*/
 /*Ahora es stat sera Mean en vez de Sum*/
 run;
 ```
+- **If/Then/Else Statement**
+- Condicional Simple
+```sas
+data class_data;
+/*Cantidad maxima de caracteres*/
+	length _Sex $10;
+	set sashelp.class;
+/*Crea una nueva columna con un nuevo nombre*/
+	if Sex = 'M' then _Sex = 'Male';
+	else _Sex = 'Female';
+run;
+
+proc print data=class_data;
+run;
+```
+- Condicional compuesto
+```sas
+data class_data;
+	length Fish_Size $10;
+	set sashelp.fish;
+	if Length1 < 15 then Fish_Size = 'Small';
+	else if Lenght >15 and Length < 25 then Fish_Size = 'Medium';
+	else Fish_Size = 'Large';
+run;
+```
+- Condicional con mas de una accion
+```sas
+data class_data;
+	length Fish_Size $10;
+	set sashelp.fish;
+	if Length1 < 15 then Do;
+/*Crear dos columnas en base a un condicional*/
+	Fish_Size = 'Small';
+	Fish_Location = 'SaltWater';
+	end;
+run;
+```
+
 
