@@ -107,7 +107,18 @@ Son usados para leer datos no estandar como:
 Data Statement: Name of the new dataset you want to create and the library you are storing it in
 Set Statement: Name of the old dateset
 
-- **Create a library that already contains SAS datasets
+- **Create a library that already contains SAS datasets**
+```sas
+data bweight_kg;
+	set sashelp.bweight;
+/*Creamos la variable Weight_Kg y Domestic_Status*/
+	Weight_Kg = Weight/1000; * division;
+	Domestic_Status =  "International";*character asignment;
+run;
+
+proc print data=bweight_kg;
+run;
+```
 
 
 
