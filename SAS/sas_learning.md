@@ -95,6 +95,20 @@ run;
 proc print data=date_sample;
 run;
 ```
+- **Informats**
+Son usados para leer datos no estandar como:
+- Hyphens
+- Slashes
+- Dollar Sign
+- Percent Sign
+- Commas
+
+- **Data Step**
+Data Statement: Name of the new dataset you want to create and the library you are storing it in
+Set Statement: Name of the old dateset
+
+- **Create a library that already contains SAS datasets
+
 
 
 
