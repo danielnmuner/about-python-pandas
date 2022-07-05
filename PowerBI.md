@@ -1,5 +1,5 @@
 # Analisis de Datos con Power BI
-Renzo Roca
+Renzo Roca [Fuentes de Datos](https://drive.google.com/drive/folders/1Fj0pAHTaFrQpIub3yEQ_4-aZDFAiV6Jt)
 
 ## Business Intelligence con Power BI
 Flujo de BI 
@@ -52,3 +52,35 @@ Datos Base de Datos SQL Server
 Transformar datos con Power Query
 
 - **¿Qué hace Power Query?**: Extrae , transforma y carga en Power BI los datos para su posterior análisis, es decir no analiza los dato solo los prepara. **Magia**:Es similar a los macros de Excel, podemos movernos en el flujo de trabajo.Simplemente seleccionamos la tabla que queremos procesar y hacemos clic en **Transformar datos**. Podemos observar cada tipo de dato. Power Query maneja distintos tipos de datos que Excel. Al conectarse a una fuente de datos, crea diversos **Pasos aplicados**.
+
+Las transformaciones más comunes que podemos realizar en Power Query son:
+  - Cambiar tipo de dato
+  - Anexar consultas
+  - Dividir columnas
+  - Combinar consultas
+  - Reemplazar valores
+  - También podemos hacer combinaciones:
+  - Combinar binarios
+  - Agregar columnas
+  - Filtrar datos.
+
+**Tipos de combinaciones en Power BI**
+- **Anexar**: Permite unir dos o más tablas de manera vertical. Se recomienda que ambas tablas tengan la misma estructura. Si este no es el caso, el sistema añade al conjunto final los campos de todas demás con valores nulos.
+
+Similar a una operación UNION de SQL.
+Los resultados pueden ser una nueva consulta o ser agregada a un paso de la existente.
+Combinar consultas
+Nos permite tomar dos tablas y cruzarlas mediante una columna en común.
+Usualmente utilizado para complementar información de una tabla.
+Es el equivalente más cercano a la función JOIN del estándar SQL.
+Los distintos tipos de combinaciones (y su equivalente en SQL) son:
+Externa izquierda (LEFT JOIN)
+Externa derecha (RIGHT JOIN)
+Externa completa (FULL OUTER JOIN)
+Interna (INNER JOIN)
+Anti izquierda (LEFT EXCLUSIVE JOIN)
+Anti derecha (RIGHT EXCLUSIVE JOIN)
+Combinar binarios:
+Permite extraer las tablas de los archivos mediante un proceso automatizado.
+Usualmente utilizado mediante el conector de carpeta.
+Es de especialidad utilidad cuando la fuente de información se encuentra demasiado fragmentada como para la operación de anexar.
