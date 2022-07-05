@@ -44,3 +44,11 @@ Datos Base de Datos SQL Server
   - **Contraseña**: pr@acticasRR2021.
   - **Owner**: https://www.flowcode.com/page/renzoroca
   
+¿Qué es ETL?
+  - **Extract**: Extraer datos desde cualquier fuente, ya sea archivos planos, binarios, bases de datos o servicios cloud.
+  - **Transform**: Transformar, limpiar o enriquecer la información extraída sin modificar la fuente.
+  - **Load**: Cargar los datos ya transformados al modelo de datos.
+
+Transformar datos con Power Query
+
+- **¿Qué hace Power Query?**: Extrae , transforma y carga en Power BI los datos para su posterior análisis, es decir no analiza los dato solo los prepara. **Magia**:Es similar a los macros de Excel, podemos movernos en el flujo de trabajo.Simplemente seleccionamos la tabla que queremos procesar y hacemos clic en **Transformar datos**. Podemos observar cada tipo de dato. Power Query maneja distintos tipos de datos que Excel. Al conectarse a una fuente de datos, crea diversos **Pasos aplicados**.
