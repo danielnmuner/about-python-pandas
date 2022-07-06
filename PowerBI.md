@@ -84,3 +84,25 @@ Combinar binarios:
 Permite extraer las tablas de los archivos mediante un proceso automatizado.
 Usualmente utilizado mediante el conector de carpeta.
 Es de especialidad utilidad cuando la fuente de información se encuentra demasiado fragmentada como para la operación de anexar.
+
+
+## Crear Visualizaciones
+
+**Metodologia Storytelling**: Una metodología dentro del data storytelling es SCRAP, que se refiere a:
+- Spaced: Respetar espacios tanto dentro del gráfico como entre visualizaciones.
+- Contrast: Aplicar colores contrastantes para destacar algo en vez de tener informes monocromáticos ayudará a enfocar la atención del usuario en donde queremos.
+- Repeat: Aplicar de manera consistente tipografías, esquemas de diseño, tamaño de fuente, etc.
+- Alineado: Las visualizaciones deben estar ordenadas y alineadas. Un informe desordenado puede distraer la atención del usuario.
+- Proximity: Los objetos visuales que estén relacionados deben estar próximos entre sí.
+SCRAP está relacionado con los principios de diseño de Gestalt.
+
+**Tips para una buena visualización**
+- Menos es más
+- Los colores son importantes, úsalos bien. (Usar los colores de la Empresa)
+- Mantén tus elementos bien alineados.
+- No siempre es bueno mostrar todo en una cifra. (Apoyarse de un catalogo de Visualizaciones)
+- Muestra solo información relacionada. 
+- Una mala elección de un visual puede ocasionar que la información no se transmita de manera correcta, llegando incluso a tergiversar el entendimiento de la misma. 
+
+
+
