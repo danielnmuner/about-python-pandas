@@ -18,8 +18,9 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 - Si buscamos `.....` **REGEX** traera una busqueda mas especifica para conjuntos de 5 caracteres agrupados.
 
 ### Las clases predefinidas y construidas de REGEX
-- `\d` = Selecciona dígitos. Equivalente: `[0-9]` $\to$ Todos los Numeros. `[7-9]` $\to$ Numeros del 7 al 9
-- `\w` = Resalta caracteres. Equivalente: `[a-zA-Z0-9]` Busca lo que puede ser equivalente a una palabra. 
-- `\s` = Muestra los espacios en blanco. Equivalente: `[ ]` o Espacios en blanco.
-- `[ \.]` = Busca el símbolo de punto
+- `\d` Selecciona dígitos. Equivalente: `[0-9]` $\to$ Todos los Numeros. `[7-9]` $\to$ Numeros del 7 al 9
+- `\w` Resalta caracteres. Equivalente: `[a-zA-Z0-9]` Busca lo que puede ser equivalente a una palabra sin caracteres especiales. 
+- `[a-tA-Z0-2_\.]` Solo lower case de la `a-t`, upper case `A-Z`, numeros de `0-2`, caracteres especial `_` y `.`. 
+- `\s` Muestra los espacios en blanco. Equivalente: `[ ]` o Espacios en blanco.
+- `[ \.]` Busca el símbolo de punto
 
