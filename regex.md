@@ -24,3 +24,14 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 - `\s` Muestra los espacios en blanco. Equivalente: `[ ]` o Espacios en blanco.
 - `[ \.]` Busca el símbolo de punto
 
+### Delimitadores +, *, ?
+
+![image](https://user-images.githubusercontent.com/60556632/182173497-8da0f6f2-7ed8-4308-80b0-0f135017a3a2.png)
+
+- `*` Es una abrevicion `todo`, `\d*` Resaltara todos los caracteres numericos. `.*` Todos los caracteres sin distriminacion.
+- `+` Indica que el proximo caracter **debe** aparecer.
+- `*` Indica que **puede** aparecer 0-muchas.
+- `?` Indica que **puede** aparecer 0-1.
+
+**Ejemplo Basico** `\d*[a-z]?s`
+1. `\d*` Puede haber 0 o Muchos`*` digitos Numericos `\d`  
