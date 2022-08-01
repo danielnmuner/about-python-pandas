@@ -26,12 +26,14 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 
 ### Delimitadores +, *, ?
 
-![image](https://user-images.githubusercontent.com/60556632/182173497-8da0f6f2-7ed8-4308-80b0-0f135017a3a2.png)
-
 - `*` Es una abrevicion `todo`, `\d*` Resaltara todos los caracteres numericos. `.*` Todos los caracteres sin distriminacion.
 - `+` Indica que el proximo caracter **debe** aparecer.
 - `*` Indica que **puede** aparecer 0-muchas.
-- `?` Indica que **puede** aparecer 0-1.
+- `?` Indica que **puede** aparecer 0-1. Es decir tomara solo 1 en caso de que aplique.
 
-**Ejemplo Basico** `\d*[a-z]?s`
-1. `\d*` Puede haber 0 o Muchos`*` digitos Numericos `\d`  
+**Ejemplo Basico** `\d*[a-z]?s` Se podria decir que se lee de por secciones de derecha a izquierda.
+1. `\d*` Puede haber 0 o Muchos`*` digitos Numericos `\d`.
+2. `[a-z]?` Puede haber 0 o 1 `?` carateres de `a-z` lower case. 
+3. `s` Al no haber `*,+,?` indica que la cadena debe terminar con `s`    
+
+![image](https://user-images.githubusercontent.com/60556632/182173497-8da0f6f2-7ed8-4308-80b0-0f135017a3a2.png)
