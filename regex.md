@@ -36,8 +36,6 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 2. `[a-z]?` Puede haber 0 o 1 `?` carateres de `a-z` lower case. 
 3. `s` Al no haber `*,+,?` indica que la cadena debe terminar con `s`    
 
-![image](https://user-images.githubusercontent.com/60556632/182173497-8da0f6f2-7ed8-4308-80b0-0f135017a3a2.png)
-
 ### Los contadores {1,4}
 
 1. `\d\d` Este patron extrae no solo **dos** digitos numericos sino pares de digitos numericos en una cadena de caracteres como `1234` es decir cadenas pares. `\d\d\d` traeria cadenas nuericas consecutivas multiplos de 3
@@ -66,6 +64,20 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 1. Usualmente en una sola linea de cadenas de caracteres varias cadenas o incluso caracateres se ajustan al patron establecido. Para evitar multiples matches a nivel de linea y ser mas estrictos indicamos el inicio y le fin de la Expresion regular para evitar su multiplicacion en la linea. Ejemplo `^\d\d$` solo toma dos digitos numericos por linea si una cadena tiene mas de 2 o incluso es par entonces no sera tomada en cuenta.
 2. `^[^\d]$` Que es un solo carater no numerico.
 3. `^\w+,\w+,\w+$` Mas de un caracter alfanumerico seguido de una coma hasta 3 veces. **Si ocurre una cuarta vez se ignorara por completo toda la linea.**
+
+
+**Nota** `Escapamos cuando necesitamos usar caracteres reservados`
+### Teléfonos
+1. Aplica para un caso de uso especifico visto en la [clase](https://platzi.com/clases/1301-expresiones-regulares/11859-telefonos/). Expresion `^\+\d+[#pe]?\d*$` Donde `\+` es por que necesitamos `+` y este es un caracter reservado. Por otro lado `[#pe]?` es una clase delimitada por `?`.
+2. `\+?\d{2,3}[^\da-z]?\d{2,3}[#pe]?\d*$` Toda la expresion regualar se hace de manera experimental para lo cual podriamos utilizar una editor de codigo. **Nota**: `[^\da-z]?` Es una clase que acepta todo menos datos alfanumericos lower case. 
+
+
+### RegExp en URLs(Dirrecione/Dominios)
+1. Expresion `https?:\/\/[\w\-\.]+\.\w{2,5}\/?\S*`. La expresion `https?` es equivalente a `http[s]?` aun que parece que `https?` toma toda la cadena de carateres en realidad solo esta tomando la inmediata anterior. La clase `[\w\-\.]` escapa `-` y `.` debido a que son reservados. Finalmente `\S` al final no aceptara espacion esn blanco. 
+
+## RegExp en Emails
+1. `[\w\._][5,30]\+?[\w]{0,10}@[\w\.\-]{3,}\.\w{2,5}`
+
 
 
 
