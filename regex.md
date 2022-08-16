@@ -27,7 +27,7 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 ### Delimitadores +, *, ?
 
 - `*` Es una abrevicion `todo`, `\d*` Resaltara todos los caracteres numericos. `.*` Todos los caracteres sin distriminacion.
-- `+` Indica que el proximo caracter **debe** aparecer.
+- `+` Indica que el proximo caracter **debe** aparecer es decir mas de uno.
 - `*` Indica que **puede** aparecer 0-muchas.
 - `?` Indica que **puede** aparecer 0-1. Es decir tomara solo 1 en caso de que aplique.
 
@@ -50,3 +50,22 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 2. `[\-\.]?` Inidica que puede o no haber `-` o `.` justo despues de las cadena numerica.
 3. Este patron podria identificar $\to$ `12345678`, `12-34-56-78`, `12.34.56.78`
 4. `\d{2,2}[\-\.]?\d{2,2}[\-\.]?\d{2,2}[\-\.]?\d{2,2}[\-\.]?` En el punto 3 se realizan match a nivel de caracteres pero para hacerlo a nivel de linea podemos replicarlo segun la necesidad.
+5. Ademas pudes añadir un espacio en blanco `[\-\. ]?` y reemplazar en `?` por un contador `[\-\. ]{0,1}`
+
+
+### El caso de (?) como delimitador de lo General a lo Especifico
+1. `.*,` Trae `.*` todo lo que anteceda una coma `,` a nivel general. Ejemplo `csv1,csv2,csv3,`
+2. `.+?,` Trea todo lo que antecede a una coma `,` a un nivel mas especifico `cvs1,` `csv2,` `csv3,` 
+
+### Not (^), su uso y sus peligros
+1. `\w` corresponde a todo lo que se ajusta a `[a-zA-Z0-9]` sin embargo `\W` corresponde a todo lo que no se justa a `\w`.
+2. `[^0-5a-c]` indica que solo toma `[6-9d-z]`
+3. Cuando estudiamos contadores creamos la expresion `\d{2,2}[\-\.]?` la cual puede ser reemplazada por `\d{2,2}\D?` donde `\D` es simplemente un **No Numerico** lo cual permitiria cual quier tipo de caracter.  Es decir es menos riguroso pero igualemte util.
+
+### Principio (^) y final de linea ($)
+1. Usualmente en una sola linea de cadenas de caracteres varias cadenas o incluso caracateres se ajustan al patron establecido. Para evitar multiples matches a nivel de linea y ser mas estrictos indicamos el inicio y le fin de la Expresion regular para evitar su multiplicacion en la linea. Ejemplo `^\d\d$` solo toma dos digitos numericos por linea si una cadena tiene mas de 2 o incluso es par entonces no sera tomada en cuenta.
+2. `^[^\d]$` Que es un solo carater no numerico.
+3. `^\w+,\w+,\w+$` Mas de un caracter alfanumerico seguido de una coma hasta 3 veces. **Si ocurre una cuarta vez se ignorara por completo toda la linea.**
+
+
+
