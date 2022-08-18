@@ -76,7 +76,21 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 1. Expresion `https?:\/\/[\w\-\.]+\.\w{2,5}\/?\S*`. La expresion `https?` es equivalente a `http[s]?` aun que parece que `https?` toma toda la cadena de carateres en realidad solo esta tomando la inmediata anterior. La clase `[\w\-\.]` escapa `-` y `.` debido a que son reservados. Finalmente `\S` al final no aceptara espacion esn blanco. 
 
 ## RegExp en Emails
-1. `[\w\._][5,30]\+?[\w]{0,10}@[\w\.\-]{3,}\.\w{2,5}`
+1. `[\w\._]{5,30}\+?[\w]{0,10}@[\w\.\-]{3,}\.\w{2,5}`
+
+### Localizaciones
+1. Las coordenadas usualmente son Lat/Lon, donde los valores oscilan entre 0 y 180 mas 6 cifras significativas como maximo.
+2. `^\?\d{1,3}\.\d{1,6},\s?\-?\d{1,3}\.\d{1,6},.*$` $\to$ `-134.345678, 123.567845, WW EE`
+3. Las coordenadas tambien se pueden entregar en formato de Grados, Minutos y Segundos.
+4. `^\-?\d{1,3}\s\d{1,,2}' \d{1,2}\.\d{2,2}"[WE],\s?\-?\d{1,3}\s\d{1,2}' \d{1,2}\. \d{2,2}"[SN]$` $\to$ ``-34 54' 32.00"N, -31 23' 34.00"S`
+
+### Búsqueda y Reemplazo **Agrupar** `()`
+1. `^\d+::([\w\s:,\(\)'\.\-&!\/]+)\s\((\d\d\d)\)::.*$` $\to$ `240::Hoop Dreams (1990)::Documentary` Agrupar consiste en seccionar una cadena de caracteres. En general con las RegExp creamos patrones que pueden filtrar cadenas de caracteres sin embargo los grupos exiten para separar patrones por grupos. 
+2. `([\w\s:,\(\)'\.\-&!\/]+)` $\to$ `$1`, `(\d\d\d)` $\to$ `$2` Reprecentan dos patrones aplicados a una sola cadena de carateres aun siendo estrictos con el inicio y el fin de la expresion `^$`. Es importante tener encuenta que aun que hay otros parentesis `\(\)` estos en realidad se `Escapan` y se utilizan como parte de los patrones. 
+3. En la practica **Buscar** llevaría los **2** patrones agrupados `^\d+::([\w\s:,\(\)'\.\-&!\/]+)\s\((\d\d\d)\)::.*$` y en **Reemplazar** por ejemplo `INSERT INTO TABLE (YEAR,TITLE) VALUES($2,$1)` entonces el Editor/Lenguaje de Programación solo tomará lo que esta en el Grupo y los colocará dentro de la estructura definida en **Reemplazar**.
+4. Ejemplo aplicado a JSON $\to$ `{title:"$1", year:$2}`
+
+
 
 
 
