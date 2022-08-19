@@ -84,13 +84,24 @@ Consite en la creacion o diseño de patrones personalizados que permitiran filtr
 3. Las coordenadas tambien se pueden entregar en formato de Grados, Minutos y Segundos.
 4. `^\-?\d{1,3}\s\d{1,,2}' \d{1,2}\.\d{2,2}"[WE],\s?\-?\d{1,3}\s\d{1,2}' \d{1,2}\. \d{2,2}"[SN]$` $\to$ ``-34 54' 32.00"N, -31 23' 34.00"S`
 
-### Búsqueda y Reemplazo **Agrupar** `()`
+### Búsqueda y Reemplazo **Agrupar** `()` o Variables en RegExp
 1. `^\d+::([\w\s:,\(\)'\.\-&!\/]+)\s\((\d\d\d)\)::.*$` $\to$ `240::Hoop Dreams (1990)::Documentary` Agrupar consiste en seccionar una cadena de caracteres. En general con las RegExp creamos patrones que pueden filtrar cadenas de caracteres sin embargo los grupos exiten para separar patrones por grupos. 
 2. `([\w\s:,\(\)'\.\-&!\/]+)` $\to$ `$1`, `(\d\d\d)` $\to$ `$2` Reprecentan dos patrones aplicados a una sola cadena de carateres aun siendo estrictos con el inicio y el fin de la expresion `^$`. Es importante tener encuenta que aun que hay otros parentesis `\(\)` estos en realidad se `Escapan` y se utilizan como parte de los patrones. 
 3. En la practica **Buscar** llevaría los **2** patrones agrupados `^\d+::([\w\s:,\(\)'\.\-&!\/]+)\s\((\d\d\d)\)::.*$` y en **Reemplazar** por ejemplo `INSERT INTO TABLE (YEAR,TITLE) VALUES($2,$1)` entonces el Editor/Lenguaje de Programación solo tomará lo que esta en el Grupo y los colocará dentro de la estructura definida en **Reemplazar**.
 4. Ejemplo aplicado a JSON $\to$ `{title:"$1", year:$2}`
 
+### Uso de REGEX para descomponer Queries GET en una ULR
+El tracking de las URL's es importante en Analytics y nos referimos al Metodo GET puesto que la informacion viaja concatenada a una URL. `https://www.google.com/search?q=regex+platzi&oq=regex+platzi&aqs=chrome..69i57j69i60.6885j0j9&sourceid=chrome&ie=UTF-8` El informacion se coloca a partir de `[\?&]` y luego se concatena entre `&` Asi la expresion regular para Buscar y Reemplazar sería **Find**: `[\?&](\w+)=([^&\n]+)` y **Replace**: `\n - $1=$2`.
 
+1. `$1` $\to$ `(\w+)=` respentando la condicion `[\?&]`. Asi `?q=regex+platzi&oq=regex+platzi` sería `q=` , `oq`
+2. `$2` $\to$ `([^&\n]+)` luego justo despues de `=` debe haber cualquier texto pero no podemos tomar `&` o `\n` puesto que ambos son delimitadores del patron, asi que debemos usar `^` para negar esos dos caracteres. Entonces para `?q=regex+platzi&oq=regex+platzi` sería `regex+platzi` , `regex+platzi` 
+
+### `grep` y `find` desde consola
+1. `cat file_name.csv | wc -l` $\to$ Indica la cantidad de lineas en el archivo.
+2. `cat file_name | grep ^2012` $\to$ Todas la filas que inician con 2012.
+3. `cat file_name | grep ,3[0-9],` $\to$ Lineas que continen el `31` entre `,`
+4. `cat file_name | grep SE$` $\to$ Termina en `SE`
+5. `cat file_name | grep Brazil | grep ^1952` $\to$ Se procesa una despues del otro. Intput | Output/Input | Output
 
 
 
