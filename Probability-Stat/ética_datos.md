@@ -99,7 +99,7 @@ El uso de plataformas para crear reuniones Virtuales. Aplicaciones de citas que 
 
 ### Ética y Procesamiento de Lenguaje Natural (NLP)
 
-Se encarga de investigar la interaccion entre las computadoras y el lenguaje humano mediante el uso de lenguas naturales
+Se encarga de investigar la interaccion entre las computadoras y el lenguaje humano mediante el uso de lenguas naturales. Existen 3 retos creados por Microsoft & Alibaba donde retaban a estudiantes de Stanford a medir su comprension lectora contra un algoritmo de lenguaje natural. 
 
 
 
