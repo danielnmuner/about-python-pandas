@@ -94,5 +94,13 @@ La pandemia permitio el desarrollo y ejecucion de todo tipo de controles regulat
 
 ### Ética en las relaciones interpersonales
 
+El uso de plataformas para crear reuniones Virtuales. Aplicaciones de citas que buscan segmentar perfiles de interes de un usuario. Existen aplicaciones que pueden ser gratuitas pero eso implica que nosotros somos el producto en la medida que recolectan nuestra informacion personal. Actualmente se determino que era importante heradar la administracion de las redes sociales a un familiar cercano cuando una persona passed away.
+
+
+### Ética y Procesamiento de Lenguaje Natural (NLP)
+
+Se encarga de investigar la interaccion entre las computadoras y el lenguaje humano mediante el uso de lenguas naturales
+
+
 
 
