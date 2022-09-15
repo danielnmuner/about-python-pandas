@@ -74,3 +74,25 @@ Actualmente se pueden analizar todo tipo de Blobs es decir binarios con Sonido, 
 
 Cambridge Analytical ofrecia negocios a partidos politicos con la posiblidad de cambiar/manipular el comportamiento de la audiencia usando datos recolectados en encuestas, redes sociales y estudiando estos datos con modelos de comportamiento predictivos de manera que se pudiera tener un conocimiento mas amplio de la audiencia.
 
+### Reglamentos
+
+- **Reglamento General de Protección de Datos (GDPR)** La ley general más reciente vigente en Europa es la GDPR que significa General Data Protection Regulation que tiene por objeto regular el uso de datos de los ciudadanos europeos.
+
+-La Ley Federal de Protección de Datos Personales en Posesión de Particulares
+
+### Ética y deep learning: vehículos autónomos
+
+Tesla es un vehiculo inteligente que analiza su entorno para evitar accidentes. A pesar de que la tecnologia existe hace tiempo el sistema de reconocimiento de entorno tiene vulnerabilidades en la seguridad de los datos es así que la etica prevalece aun sobre casos de tecnología actuales.
+
+### Ética y deep learning: reconocimiento facial
+
+Se basa en el reconocimiento de vectores en de una imagen y busca facilitar el acceso  espacios fisicos y virtuales, sin embargo el trade off involucra nuestra información biometrica a cambio de acceso. Eticamente el individuo es quien decide por lo cual si decide no entregar su información biometrica el individuo puede usar otro tipo de accesos.La línea entre la usabilidad y la invasión de la privacidad es delgada.
+
+### Ética con datos en la pandemia
+
+La pandemia permitio el desarrollo y ejecucion de todo tipo de controles regulatorios para evitar el crecimiento del virus lo cuales involucraban monitoreos de lugares fisicos incluso de individuos esto cambia entre paises y su nivel de inversion para la mitigación la emfermedad.
+
+### Ética en las relaciones interpersonales
+
+
+
