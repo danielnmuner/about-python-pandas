@@ -114,5 +114,8 @@ Se encarga de investigar la interaccion entre las computadoras y el lenguaje hum
 
 ### Datos y salud
 
-El Apple Watch monitorea frecucia cardica, catidad de pasos, se basa en historicos y puede generar alertas para notificar a familiares acerca de una problema de salud
+- El Apple Watch monitorea frecucia cardica, catidad de pasos, se basa en historicos y puede generar alertas para notificar a familiares acerca de una problema de salud
+- Dipositivos para determinar que tepo de tratamiento se debe aplicar a una persona con cancer. 
 
+### Datos y movilidad
+El sector de movilidad tiene muchas singularidades. Es una sector en el cual se recolecta mucha información he identificar el flujo vehicular y busca facilitar la movilidad. Las cuidades que desarrollan este tipo de tecnonogía como singapur   
