@@ -99,8 +99,20 @@ El uso de plataformas para crear reuniones Virtuales. Aplicaciones de citas que 
 
 ### Ética y Procesamiento de Lenguaje Natural (NLP)
 
-Se encarga de investigar la interaccion entre las computadoras y el lenguaje humano mediante el uso de lenguas naturales. Existen 3 retos creados por Microsoft & Alibaba donde retaban a estudiantes de Stanford a medir su comprension lectora contra un algoritmo de lenguaje natural. 
+Se encarga de investigar la interaccion entre las computadoras y el lenguaje humano mediante el uso de lenguas naturales. Existen 3 retos creados por Microsoft & Alibaba donde retaban a estudiantes de Stanford a medir su comprension lectora contra un algoritmo de lenguaje natural. El NPL tambien busca comunicarse diferente segun sea la edad de la persona con la que se pretende cominucar. GPT3 es un Lenguaje autoregresivo(Entiende una comprension del pasado de manera lineal) en base a datos historicos para realizar prediciones de documentos como la historia de la humanidad, medicina y tegnologia para plantear el futuro.   
 
+### ¿Qué son las políticas públicas?
 
+  - Se pude realizar a partir de normas, Instituciones, servicios.
+  - Nacional-municipal, Educación-medio ambiente, destinatarios(jovenes-adultos),Elaboración(participativa o autoritaria), Planificación(anticipativa[acción de anticipar en el tiempo la ejecución de una cosa]-reactiva) 
+  - La creación de **semaforos** se considera una politica publica puesto que busca **monitorear** y **contribuir a una necesidad social** a partir de los datos desde el **gobierno o estado**. 
 
+### Datos y prevención de crímenes
+
+1. Recolección de evidencia por parte de las camaras(Reactivo) video, imagenes, coordenadas geograficas sobre el tipo de crime, genero, a quien?, cuando?. Se puede crear una mapa de calor para ver por horarios cual es la distribución de crimenes en una ciudad y la tipologia de lo crimenes. 
+2. Facilitar el acceso a la plataforma para interponer denuncias de manera que se puedan sugerir mas camaras en zonas donde estan ocurriendo mas crimenes. 
+
+### Datos y salud
+
+El Apple Watch monitorea frecucia cardica, catidad de pasos, se basa en historicos y puede generar alertas para notificar a familiares acerca de una problema de salud
 
