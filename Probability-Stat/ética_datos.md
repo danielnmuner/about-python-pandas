@@ -118,4 +118,14 @@ Se encarga de investigar la interaccion entre las computadoras y el lenguaje hum
 - Dipositivos para determinar que tepo de tratamiento se debe aplicar a una persona con cancer. 
 
 ### Datos y movilidad
-El sector de movilidad tiene muchas singularidades. Es una sector en el cual se recolecta mucha información he identificar el flujo vehicular y busca facilitar la movilidad. Las cuidades que desarrollan este tipo de tecnonogía como singapur   
+El sector de movilidad tiene muchas singularidades. Es una sector en el cual se recolecta mucha información he identificar el flujo vehicular y busca facilitar la movilidad. Las cuidades que desarrollan este tipo de tecnonogía como singapur consideradon una smart city que recolecta data y la deja a disposicion de los cuidadanos.
+
+- El dilema etico surge cuando se llega al punto de discriminar espacios geograficos que se consideran peligrosos o inseguras.
+
+### Datos y Educación
+
+Las escuelas pueden monitorear información de sus estudiantes como desempeño, horas de conexion y en general identificar patrones de comportamiento en la medida que se conectan los usuarios e interactuan con el contenido de la plataforma educativa.
+
+### Datos y Ambiente
+
+Identificar contaminación, fenomenos naturales, plagas, calidad del subsuelo. 
